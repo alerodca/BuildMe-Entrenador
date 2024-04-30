@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
 		9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */; };
 		9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */; };
 		9F90BD6B2BDFEFCD005AABF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BD6A2BDFEFCD005AABF4 /* Assets.xcassets */; };
@@ -112,6 +113,7 @@
 				9F90BD812BDFF1B4005AABF4 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				9F90BDA72BDFF1B4005AABF4 /* FirebaseMLModelDownloader in Frameworks */,
 				9F90BD9B2BDFF1B4005AABF4 /* FirebaseFirestoreSwift in Frameworks */,
+				9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */,
 				9F90BD872BDFF1B4005AABF4 /* FirebaseAppCheck in Frameworks */,
 				9F90BD852BDFF1B4005AABF4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9F90BD8B2BDFF1B4005AABF4 /* FirebaseAuth in Frameworks */,
@@ -137,6 +139,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F472E4A2BE00F1900DA8BA1 /* WorkoutDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F472E4B2BE00F2100DA8BA1 /* ExerciseDetail */,
+			);
+			path = WorkoutDetail;
+			sourceTree = "<group>";
+		};
+		9F472E4B2BE00F2100DA8BA1 /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		9F472E4C2BE00F5800DA8BA1 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		9F472E4D2BE00F7200DA8BA1 /* DietDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F472E4E2BE00F7900DA8BA1 /* FoodDetail */,
+			);
+			path = DietDetail;
+			sourceTree = "<group>";
+		};
+		9F472E4E2BE00F7900DA8BA1 /* FoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FoodDetail;
+			sourceTree = "<group>";
+		};
 		9F90BD552BDFEFCA005AABF4 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +299,7 @@
 		9F90BDCD2BDFFF77005AABF4 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
+				9F472E4D2BE00F7200DA8BA1 /* DietDetail */,
 				9F90BDE52BE0003D005AABF4 /* DietViewController.swift */,
 				9F90BDE62BE0003D005AABF4 /* DietViewController.xib */,
 			);
@@ -269,6 +309,7 @@
 		9F90BDCE2BDFFF83005AABF4 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				9F472E4A2BE00F1900DA8BA1 /* WorkoutDetail */,
 				9F90BDE12BE00033005AABF4 /* WorkoutViewController.swift */,
 				9F90BDE22BE00033005AABF4 /* WorkoutViewController.xib */,
 			);
@@ -278,6 +319,7 @@
 		9F90BDCF2BDFFF87005AABF4 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				9F472E4C2BE00F5800DA8BA1 /* UserDetail */,
 				9F90BDDD2BE00025005AABF4 /* UsersViewController.swift */,
 				9F90BDDE2BE00025005AABF4 /* UsersViewController.xib */,
 			);
@@ -354,6 +396,7 @@
 				9F90BDAE2BDFF1B4005AABF4 /* FirebaseRemoteConfigSwift */,
 				9F90BDB02BDFF1B4005AABF4 /* FirebaseStorage */,
 				9F90BDB22BDFF1B4005AABF4 /* FirebaseStorageCombine-Community */,
+				9F472E502BE01BC000DA8BA1 /* JGProgressHUD */,
 			);
 			productName = BuildMe_Entrenador;
 			productReference = 9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */;
@@ -385,6 +428,7 @@
 			mainGroup = 9F90BD552BDFEFCA005AABF4;
 			packageReferences = (
 				9F90BD7D2BDFF1B4005AABF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9F472E4F2BE01BC000DA8BA1 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 9F90BD5F2BDFEFCB005AABF4 /* Products */;
 			projectDirPath = "";
@@ -585,6 +629,7 @@
 				DEVELOPMENT_TEAM = QKXUJ9425T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuildMe_Entrenador/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BuildMe;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -612,6 +657,7 @@
 				DEVELOPMENT_TEAM = QKXUJ9425T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuildMe_Entrenador/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BuildMe;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -653,6 +699,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9F472E4F2BE01BC000DA8BA1 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 		9F90BD7D2BDFF1B4005AABF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -664,6 +718,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9F472E502BE01BC000DA8BA1 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F472E4F2BE01BC000DA8BA1 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		9F90BD7E2BDFF1B4005AABF4 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9F90BD7D2BDFF1B4005AABF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
