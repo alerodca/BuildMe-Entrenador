@@ -7,11 +7,14 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 
 protocol AuthControllerDelegate: AnyObject {
-    func showAlert(title: String, message: String)
+    func showAlert(title: String, message: String, isError: Bool)
     func navigate()
     func authComplete()
+    func showIndicator()
+    func hideIndicator()
 }
 
 class LoginViewModel {
@@ -22,23 +25,56 @@ class LoginViewModel {
     
     // MARK: - Functions
     func login(email: String?, password: String?) {
+        delegate?.showIndicator()
         guard let email = email, !email.isEmpty,
               let password = password, !password.isEmpty else {
-            delegate?.showAlert(title: "Error", message: "Por favor ingresa un email y una contraseña válidos")
+            delegate?.hideIndicator()
+            delegate?.showAlert(title: "Error", message: "Por favor ingresa un email y una contraseña válidos", isError: true)
             return
         }
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                self.showError(error: error as! AuthErrorCode)
+        
+        let databaseRef = Database.database().reference().child(Constants.trainerChild)
+        databaseRef.observeSingleEvent(of: .value) { (snapshot) in
+            guard snapshot.exists() else {
+                self.delegate?.hideIndicator()
+                self.delegate?.showAlert(title: "Error", message: "No se encontraron datos de usuarios en la base de datos", isError: true)
+                return
             }
-            self.delegate?.authComplete()
+            var isUserRegistered = false
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let userData = childSnapshot.value as? [String: Any],
+                   let userEmail = userData["email"] as? String {
+                    if userEmail == email {
+                        isUserRegistered = true
+                        break
+                    }
+                }
+            }
+            if isUserRegistered {
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let error = error {
+                        self.delegate?.hideIndicator()
+                        self.showError(error: error as! AuthErrorCode)
+                    } else {
+                        // Autenticación exitosa
+                        self.delegate?.authComplete()
+                    }
+                }
+            } else {
+                self.delegate?.hideIndicator()
+                self.delegate?.showAlert(title: "Error", message: "Para acceder a la app debe ser un Entrenador", isError: true)
+            }
         }
     }
+
+
     
     func navigatoToSignUp() {
         delegate?.navigate()
     }
     
+    // MARK: - Private Funcs
     private func showError(error: AuthErrorCode) {
         switch error {
         case AuthErrorCode.invalidEmail:
@@ -62,6 +98,6 @@ class LoginViewModel {
         default:
             errorMessage = "Se ha producido un error inesperado. Por favor, inténtalo de nuevo más tarde."
         }
-        delegate?.showAlert(title: "Error", message: errorMessage)
+        delegate?.showAlert(title: "Error", message: errorMessage, isError: true)
     }
 }

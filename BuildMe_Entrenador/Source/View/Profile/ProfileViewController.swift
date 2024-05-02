@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class ProfileViewController: UIViewController {
     
@@ -21,25 +22,28 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     // MARK: - Variables
+    let hud = JGProgressHUD()
     let viewmodel = ProfileViewModel()
     var user: User?
     var isEditingProfile = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      viewmodel.getUser { [weak self] user in
-        guard let self = self, let user = user else { return }
-        self.user = user
-        DispatchQueue.main.async {
-          self.confUser() // Llama solo si user tiene un valor
+        super.viewDidLoad()
+        confInitial()
+        viewmodel.getUser { [weak self] user in
+            guard let self = self, let user = user else { return }
+            self.user = user
+            DispatchQueue.main.async {
+                self.confUser() // Llama solo si user tiene un valor
+            }
         }
-      }
-      
-      confInitial()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        confUser()
+    }
     // MARK: - Functions
     private func confInitial() {
         view.applyBlueRedGradient()
@@ -60,7 +64,16 @@ class ProfileViewController: UIViewController {
         profileImageView.layer.borderWidth = 7
     }
     private func confUser() {
-        profileImageView.loadImage(from: user?.profileImageURL)
+        DispatchQueue.global().async {
+            if let imageURL = self.user?.profileImageURL,
+               let url = URL(string: imageURL),
+               let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.profileImageView.image = image
+                }
+            }
+        }
         nameTextField.text = user?.name
         usernameTextField.text = user?.username
         emailTextField.text = user?.email
@@ -81,16 +94,20 @@ extension ProfileViewController: ProfileDelegate {
     func updateUser(user: User) {
         print("Implementando user en el viewcontroller")
         self.user = user
-        DispatchQueue.main.async {
-          self.confUser()
-        }
+        confUser()
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+    func showAlert(title: String, message: String, isError: Bool) {
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
+            JGProgressHUDSuccessIndicatorView()
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 3, animated: true)
+        }
     }
     
     func presentLoginScreen() {

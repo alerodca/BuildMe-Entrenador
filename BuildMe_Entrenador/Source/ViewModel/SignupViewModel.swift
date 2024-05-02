@@ -38,12 +38,12 @@ class SignupViewModel: NSObject {
               let username = username, !username.isEmpty,
               let email = email, !email.isEmpty,
               let password = password, !password.isEmpty else {
-            delegate?.showAlert(title: "Error", message: "Todos los campos deben estar completos.")
+            delegate?.showAlert(title: "Error", message: "Todos los campos deben estar completos.", isError: true)
             return
         }
         
         guard let profileImageURL = imageURL else {
-            delegate?.showAlert(title: "Error", message: "Debes seleccionar una imagen de perfil")
+            delegate?.showAlert(title: "Error", message: "Debes seleccionar una imagen de perfil", isError: true)
             return
         }
         
@@ -52,7 +52,7 @@ class SignupViewModel: NSObject {
                 self.showError(error: error as! AuthErrorCode)
             } else {
                 guard let uid = authResult?.user.uid else {
-                    self.delegate?.showAlert(title: "Error", message: "No se pudo obtener el UID del usuario.")
+                    self.delegate?.showAlert(title: "Error", message: "No se pudo obtener el UID del usuario.", isError: true)
                     return
                 }
                 if let passwordEncrypted = self.encryptPassword(password: password) {
@@ -61,7 +61,7 @@ class SignupViewModel: NSObject {
                     self.pickerDelegate?.enableButtons()
                     self.delegate?.authComplete()
                 } else {
-                    self.delegate?.showAlert(title: "Error", message: "Hubo un error al encriptar la contraseña.")
+                    self.delegate?.showAlert(title: "Error", message: "Hubo un error al encriptar la contraseña.", isError: true)
                 }
             }
         }
@@ -73,14 +73,14 @@ class SignupViewModel: NSObject {
     
     func saveImage(_ image: UIImage) {
         self.image = image
-        self.delegate?.showAlert(title: "Imagen", message: "Imagen guardada.")
+        self.delegate?.showAlert(title: "Imagen", message: "Imagen guardada.", isError: false)
         uploadImageToFirebase()
     }
     
     private func uploadImageToFirebase() {
         guard let image = self.image,
               let imageData = image.jpegData(compressionQuality: 0.5) else {
-            delegate?.showAlert(title: "Error", message: "No hay imagen para subir.")
+            delegate?.showAlert(title: "Error", message: "No hay imagen para subir.", isError: true)
             return
         }
         
@@ -89,15 +89,15 @@ class SignupViewModel: NSObject {
         
         imageRef.putData(imageData, metadata: nil) { _, error in
             if let error = error {
-                self.delegate?.showAlert(title: "Error", message: "Error al subir la imagen: \(error.localizedDescription).")
+                self.delegate?.showAlert(title: "Error", message: "Error al subir la imagen: \(error.localizedDescription).", isError: true)
             } else {
                 imageRef.downloadURL { url, error in
                     if let error = error {
-                        self.delegate?.showAlert(title: "Error", message: "Error al obtener la URL de la imagen: \(error.localizedDescription).")
+                        self.delegate?.showAlert(title: "Error", message: "Error al obtener la URL de la imagen: \(error.localizedDescription).", isError: true)
                     } else if let url = url {
                         self.imageURL = url.absoluteString
                     } else {
-                        self.delegate?.showAlert(title: "Error", message: "No se pudo obtener la URL de la imagen.")
+                        self.delegate?.showAlert(title: "Error", message: "No se pudo obtener la URL de la imagen.", isError: true)
                     }
                 }
             }
@@ -127,7 +127,7 @@ class SignupViewModel: NSObject {
         default:
             errorMessage = "Se ha producido un error inesperado. Por favor, inténtalo de nuevo más tarde."
         }
-        delegate?.showAlert(title: "Error", message: errorMessage)
+        delegate?.showAlert(title: "Error", message: errorMessage, isError: true)
     }
     
     private func encryptPassword(password: String) -> String? {
@@ -138,11 +138,11 @@ class SignupViewModel: NSObject {
     }
     
     private func saveUserToDatabase(user: User) {
-        let databaseRef = Database.database().reference().child(Constants.usersChild)
+        let databaseRef = Database.database().reference().child(Constants.trainerChild)
         let userDictionary = user.toDictionary()
         databaseRef.child(user.uid).setValue(userDictionary) { error, refDatabase in
             if let error = error {
-                self.delegate?.showAlert(title: "Error", message: "Hubo un error al guardar los datos.")
+                self.delegate?.showAlert(title: "Error", message: "Hubo un error al guardar los datos.", isError: true)
             }
         }
     }

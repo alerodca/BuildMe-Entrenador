@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextFild: UITextField!
     
     // MARK: - Variables
+    let hud = JGProgressHUD()
     let viewmodel = LoginViewModel()
     
     // MARK: - Lifecycle
@@ -22,7 +24,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         initialConfigure()
-        
     }
     
     // MARK: - Functions
@@ -38,6 +39,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginWithEmailAndPassword(_ sender: UIButton) {
+        print("Username: \(usernameTextField.text), Password: \(passwordTextFild.text)")
         viewmodel.login(email: usernameTextField.text, password: passwordTextFild.text)
     }
     @IBAction func navigateToCreateAccount(_ sender: UIButton) {
@@ -62,6 +64,20 @@ extension LoginViewController: UITextFieldDelegate {
 
 // MARK: - Extension LoginViewControllerDelegate
 extension LoginViewController: AuthControllerDelegate {
+    func showIndicator() {
+        DispatchQueue.main.async {
+            self.hud.textLabel.text = "Iniciando Sesión"
+            self.hud.detailTextLabel.text = "Espere por favor"
+            self.hud.show(in: self.view)
+        }
+    }
+    
+    func hideIndicator() {
+        DispatchQueue.main.async {
+            self.hud.dismiss(animated: true)
+        }
+    }
+    
     func authComplete() {
         dismiss(animated: true)
     }
@@ -71,10 +87,17 @@ extension LoginViewController: AuthControllerDelegate {
         navigationController?.pushViewController(signUp, animated: true)
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+    func showAlert(title: String, message: String, isError: Bool) {
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
+            JGProgressHUDSuccessIndicatorView()
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 3, animated: true)
+        }
     }
 }
+

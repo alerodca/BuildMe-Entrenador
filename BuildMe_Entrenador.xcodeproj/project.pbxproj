@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F02CBB52BE1905200642FD3 /* DailyMealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBB42BE1905200642FD3 /* DailyMealPlan.swift */; };
+		9F02CBBB2BE1933400642FD3 /* GymExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBA2BE1933400642FD3 /* GymExercise.swift */; };
+		9F02CBBD2BE194B500642FD3 /* GymTrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */; };
+		9F02CBBF2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */; };
 		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
 		9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */; };
 		9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */; };
@@ -44,11 +48,11 @@
 		9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDBA2BDFFD7D005AABF4 /* SignupViewModel.swift */; };
 		9F90BDBD2BDFFDA8005AABF4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDBC2BDFFDA8005AABF4 /* ProfileViewModel.swift */; };
 		9F90BDBF2BDFFDD8005AABF4 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDBE2BDFFDD8005AABF4 /* RecipeViewModel.swift */; };
-		9F90BDC12BDFFDF4005AABF4 /* HealthyRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC02BDFFDF4005AABF4 /* HealthyRecipe.swift */; };
+		9F90BDC12BDFFDF4005AABF4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC02BDFFDF4005AABF4 /* Recipe.swift */; };
 		9F90BDC32BDFFE29005AABF4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC22BDFFE29005AABF4 /* Constants.swift */; };
 		9F90BDC52BDFFE77005AABF4 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC42BDFFE77005AABF4 /* Extension+String.swift */; };
-		9F90BDC72BDFFEB2005AABF4 /* Extension+ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC62BDFFEB2005AABF4 /* Extension+ImageView.swift */; };
-		9F90BDC92BDFFED9005AABF4 /* Extension+Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC82BDFFED9005AABF4 /* Extension+Textfield.swift */; };
+		9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC62BDFFEB2005AABF4 /* Extension+UIImageView.swift */; };
+		9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDC82BDFFED9005AABF4 /* Extension+UITextfield.swift */; };
 		9F90BDCB2BDFFEFE005AABF4 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDCA2BDFFEFE005AABF4 /* Extension+UIView.swift */; };
 		9F90BDD42BDFFFDE005AABF4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDD32BDFFFDE005AABF4 /* TabBarController.swift */; };
 		9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDD52BE00007005AABF4 /* LoginViewController.swift */; };
@@ -64,9 +68,14 @@
 		9F90BDEB2BE00048005AABF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDE92BE00048005AABF4 /* ProfileViewController.swift */; };
 		9F90BDEC2BE00048005AABF4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BDEA2BE00048005AABF4 /* ProfileViewController.xib */; };
 		9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */; };
+		9FEB3B6A2BE3F71800C63DCC /* MediterranianDiet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEB3B692BE3F71800C63DCC /* MediterranianDiet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F02CBB42BE1905200642FD3 /* DailyMealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMealPlan.swift; sourceTree = "<group>"; };
+		9F02CBBA2BE1933400642FD3 /* GymExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymExercise.swift; sourceTree = "<group>"; };
+		9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrainingDay.swift; sourceTree = "<group>"; };
+		9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGymTrainingPlan.swift; sourceTree = "<group>"; };
 		9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildMe_Entrenador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,11 +87,11 @@
 		9F90BDBA2BDFFD7D005AABF4 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		9F90BDBC2BDFFDA8005AABF4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		9F90BDBE2BDFFDD8005AABF4 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
-		9F90BDC02BDFFDF4005AABF4 /* HealthyRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyRecipe.swift; sourceTree = "<group>"; };
+		9F90BDC02BDFFDF4005AABF4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		9F90BDC22BDFFE29005AABF4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9F90BDC42BDFFE77005AABF4 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
-		9F90BDC62BDFFEB2005AABF4 /* Extension+ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ImageView.swift"; sourceTree = "<group>"; };
-		9F90BDC82BDFFED9005AABF4 /* Extension+Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Textfield.swift"; sourceTree = "<group>"; };
+		9F90BDC62BDFFEB2005AABF4 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		9F90BDC82BDFFED9005AABF4 /* Extension+UITextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextfield.swift"; sourceTree = "<group>"; };
 		9F90BDCA2BDFFEFE005AABF4 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		9F90BDD32BDFFFDE005AABF4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		9F90BDD52BE00007005AABF4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +107,7 @@
 		9F90BDE92BE00048005AABF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9F90BDEA2BE00048005AABF4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FEB3B692BE3F71800C63DCC /* MediterranianDiet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediterranianDiet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +149,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F02CBB82BE1917700642FD3 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				9F90BDC02BDFFDF4005AABF4 /* Recipe.swift */,
+				9F02CBB42BE1905200642FD3 /* DailyMealPlan.swift */,
+			);
+			path = Diet;
+			sourceTree = "<group>";
+		};
+		9F02CBB92BE1919200642FD3 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				9F02CBBA2BE1933400642FD3 /* GymExercise.swift */,
+				9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */,
+				9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
 		9F472E4A2BE00F1900DA8BA1 /* WorkoutDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +236,7 @@
 		9F90BD752BDFEFDD005AABF4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				9FEB3B6B2BE4048800C63DCC /* Data */,
 				9F90BD7C2BDFF03C005AABF4 /* Model */,
 				9F90BD7B2BDFF039005AABF4 /* View */,
 				9F90BD7A2BDFF033005AABF4 /* ViewModel */,
@@ -238,8 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				9F90BDC42BDFFE77005AABF4 /* Extension+String.swift */,
-				9F90BDC62BDFFEB2005AABF4 /* Extension+ImageView.swift */,
-				9F90BDC82BDFFED9005AABF4 /* Extension+Textfield.swift */,
+				9F90BDC62BDFFEB2005AABF4 /* Extension+UIImageView.swift */,
+				9F90BDC82BDFFED9005AABF4 /* Extension+UITextfield.swift */,
 				9F90BDCA2BDFFEFE005AABF4 /* Extension+UIView.swift */,
 			);
 			path = Extensions;
@@ -281,8 +311,9 @@
 		9F90BD7C2BDFF03C005AABF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F02CBB92BE1919200642FD3 /* Workout */,
+				9F02CBB82BE1917700642FD3 /* Diet */,
 				9F90BDB42BDFFCBF005AABF4 /* User.swift */,
-				9F90BDC02BDFFDF4005AABF4 /* HealthyRecipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +381,14 @@
 				9F90BDD62BE00007005AABF4 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9FEB3B6B2BE4048800C63DCC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9FEB3B692BE3F71800C63DCC /* MediterranianDiet.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,19 +509,24 @@
 				9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */,
 				9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */,
 				9F90BDBF2BDFFDD8005AABF4 /* RecipeViewModel.swift in Sources */,
-				9F90BDC72BDFFEB2005AABF4 /* Extension+ImageView.swift in Sources */,
+				9FEB3B6A2BE3F71800C63DCC /* MediterranianDiet.swift in Sources */,
+				9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */,
 				9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */,
-				9F90BDC12BDFFDF4005AABF4 /* HealthyRecipe.swift in Sources */,
+				9F90BDC12BDFFDF4005AABF4 /* Recipe.swift in Sources */,
 				9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */,
 				9F90BDDB2BE00013005AABF4 /* SignupViewController.swift in Sources */,
+				9F02CBBF2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift in Sources */,
+				9F02CBBB2BE1933400642FD3 /* GymExercise.swift in Sources */,
 				9F90BDDF2BE00025005AABF4 /* UsersViewController.swift in Sources */,
 				9F90BDE32BE00033005AABF4 /* WorkoutViewController.swift in Sources */,
-				9F90BDC92BDFFED9005AABF4 /* Extension+Textfield.swift in Sources */,
+				9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */,
 				9F90BDB52BDFFCBF005AABF4 /* User.swift in Sources */,
 				9F90BDD42BDFFFDE005AABF4 /* TabBarController.swift in Sources */,
 				9F90BDC32BDFFE29005AABF4 /* Constants.swift in Sources */,
 				9F90BDCB2BDFFEFE005AABF4 /* Extension+UIView.swift in Sources */,
 				9F90BDE72BE0003D005AABF4 /* DietViewController.swift in Sources */,
+				9F02CBBD2BE194B500642FD3 /* GymTrainingDay.swift in Sources */,
+				9F02CBB52BE1905200642FD3 /* DailyMealPlan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +673,7 @@
 				DEVELOPMENT_TEAM = QKXUJ9425T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuildMe_Entrenador/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BuildMe;
+				INFOPLIST_KEY_CFBundleDisplayName = Entrenador;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -657,7 +701,7 @@
 				DEVELOPMENT_TEAM = QKXUJ9425T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuildMe_Entrenador/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BuildMe;
+				INFOPLIST_KEY_CFBundleDisplayName = Entrenador;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

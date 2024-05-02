@@ -6,24 +6,38 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DietViewController: UIViewController {
 
+    let ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        mediterranianDiet()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func mediterranianDiet() {
+        let dietaMediterranea = WeeklyMealPlan(
+            numberOfDays: 14,
+            dailyMealPlans: [
+                MediterranianDiet.lunes,
+                MediterranianDiet.martes,
+                MediterranianDiet.miercoles,
+                MediterranianDiet.jueves,
+                MediterranianDiet.viernes,
+                MediterranianDiet.sabado,
+                MediterranianDiet.domingo
+            ]
+        )
+        
+        let object = dietaMediterranea.convertToDictionary()
+        ref.child("\(Constants.dietChild)/\(Constants.mediterranianDietChild)").setValue(object) { (error, ref) in
+            if let error = error {
+                print("Error al subir el objeto:", error.localizedDescription)
+            } else {
+                print("Objeto subido exitosamente a la base de datos")
+            }
+        }
     }
-    */
-
 }

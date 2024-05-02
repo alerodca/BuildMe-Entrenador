@@ -14,7 +14,7 @@ protocol ProfileDelegate {
     func presentLogout()
     func editProfile()
     func presentLoginScreen()
-    func showAlert(title: String, message: String)
+    func showAlert(title: String, message: String, isError: Bool)
     func updateUser(user: User)
 }
 
@@ -34,7 +34,7 @@ class ProfileViewModel {
     func observeAuthState() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user { // user.uid
-                let ref = self.db.child(Constants.usersChild).child(user.uid)
+                let ref = self.db.child(Constants.trainerChild).child(user.uid)
                 ref.observe(.value) { (snapshot) in
                     guard let value = snapshot.value as? [String: Any] else { return }
                     if let user = self.castToUser(from: value) {
@@ -55,7 +55,7 @@ class ProfileViewModel {
     
     func getUser(completion: @escaping (User?) -> Void) {
         guard let uid = uid else { return completion(nil) }
-        let ref = db.child(Constants.usersChild).child(uid)
+        let ref = db.child(Constants.trainerChild).child(uid)
         ref.observe(.value) { (snapshot) in
             guard let value = snapshot.value as? [String: Any] else {
                 completion(nil)
@@ -100,18 +100,18 @@ class ProfileViewModel {
             let userToDictionary = user.toDictionary()
             
             if userToDictionary != nil {
-                db.child(Constants.usersChild).child(uid!).updateChildValues(userToDictionary) { error, _ in
+                db.child(Constants.trainerChild).child(uid!).updateChildValues(userToDictionary) { error, _ in
                     if let error = error {
                         print("Error actualizando datos: \(error.localizedDescription)")
                     } else {
-                        self.delegate?.showAlert(title: "Actualizar Usuario", message: "Cambios Actualizados.")
+                        self.delegate?.showAlert(title: "Actualizar Usuario", message: "Cambios Actualizados.", isError: false)
                     }
                 }
             } else {
                 print("userdictionary es nil")
             }
         } else {
-            self.delegate?.showAlert(title: "Actualizar Usuario", message: "No ha habido ningún cambio.")
+            self.delegate?.showAlert(title: "Actualizar Usuario", message: "No ha habido ningún cambio.", isError: true)
         }
     }
     
@@ -120,7 +120,7 @@ class ProfileViewModel {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                self.delegate?.showAlert(title: "Cambio de Contraseña", message: "Se ha enviado un mail a tu correo para cambiar la contraseña.")
+                self.delegate?.showAlert(title: "Cambio de Contraseña", message: "Se ha enviado un mail a tu correo para cambiar la contraseña.", isError: false)
             }
         }
     }

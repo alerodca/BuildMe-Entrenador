@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct HealthyRecipe: Decodable, Equatable {
-    static func == (lhs: HealthyRecipe, rhs: HealthyRecipe) -> Bool {
+struct Recipe: Decodable, Equatable {
+    static func == (lhs: Recipe, rhs: Recipe) -> Bool {
         return lhs.name == rhs.name &&
         lhs.ingredients == rhs.ingredients &&
         lhs.instructions == rhs.instructions &&
@@ -47,10 +47,10 @@ struct HealthyRecipe: Decodable, Equatable {
 
 enum MealType: String, Codable {
     case breakfast = "Desayuno"
+    case brunch = "Media mañana"
     case lunch = "Almuerzo"
     case snack = "Merienda"
     case dinner = "Cena"
-    case brunch = "Media mañana"
 }
 
 struct NutritionalValue: Codable, Equatable {

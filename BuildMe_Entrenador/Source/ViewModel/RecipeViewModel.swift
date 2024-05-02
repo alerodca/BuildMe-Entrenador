@@ -17,7 +17,7 @@ class RecipesViewModel {
     // MARK: - Variables
     let ref = Database.database().reference()
     // private var recipes: [HealthyRecipe] = []
-    var recipes: [HealthyRecipe] = []
+    var recipes: [Recipe] = []
     weak var delegate: RecipesDelegate?
     
     // MARK: - Constructor
@@ -28,7 +28,7 @@ class RecipesViewModel {
     // MARK: - Private Functions
     //private func fetchRecipes() {
     func fetchRecipes() {
-        var recipes = [HealthyRecipe]()
+        var recipes = [Recipe]()
         let healthyRecipesChild = ref.child("healthyRecipes")
         
         healthyRecipesChild.observeSingleEvent(of: .value) { (snapshot) in
@@ -39,7 +39,7 @@ class RecipesViewModel {
                 if let value = data.value as? [String: Any] {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: value)
-                        let recipe = try JSONDecoder().decode(HealthyRecipe.self, from: jsonData)
+                        let recipe = try JSONDecoder().decode(Recipe.self, from: jsonData)
                         recipes.append(recipe)
                     } catch {
                         print("Error al decodificar el objeto:", error)
@@ -57,7 +57,7 @@ class RecipesViewModel {
         return recipes.count
     }
     
-    func recipe(at index: Int) -> HealthyRecipe {
+    func recipe(at index: Int) -> Recipe {
         return recipes[index]
     }
 }

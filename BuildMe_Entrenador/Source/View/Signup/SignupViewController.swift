@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class SignupViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Variables
+    let hud = JGProgressHUD()
     let viewmodel = SignupViewModel()
     
     // MARK: - Lifecycle
@@ -74,6 +76,20 @@ extension SignupViewController: UITextFieldDelegate {
 }
 
 extension SignupViewController: AuthControllerDelegate, ImagePickerDelegate {
+    func showIndicator() {
+        DispatchQueue.main.async {
+            self.hud.textLabel.text = "Iniciando Sesión"
+            self.hud.detailTextLabel.text = "Espere por favor"
+            self.hud.show(in: self.view)
+        }
+    }
+    
+    func hideIndicator() {
+        DispatchQueue.main.async {
+            self.hud.dismiss(animated: true)
+        }
+    }
+    
     func enableButtons() {
         selectImageButton.isEnabled = true
         loginButton.isEnabled = true
@@ -99,11 +115,17 @@ extension SignupViewController: AuthControllerDelegate, ImagePickerDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+    func showAlert(title: String, message: String, isError: Bool) {
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
+            JGProgressHUDSuccessIndicatorView()
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 3, animated: true)
+        }
     }
 }
 
@@ -117,7 +139,7 @@ extension SignupViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true) {
-            self.showAlert(title: "Imagen", message: "Ninguna imagen seleccionada.")
+            self.showAlert(title: "Imagen", message: "Ninguna imagen seleccionada.", isError: false)
         }
     }
 }
