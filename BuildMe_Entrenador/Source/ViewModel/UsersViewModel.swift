@@ -11,6 +11,7 @@ import FirebaseDatabase
 protocol UsersDelegate {
     func showActivityIndicator()
     func hideActivityIndicator()
+    func didFetchUsers()
 }
 
 class UsersViewModel {
@@ -20,8 +21,21 @@ class UsersViewModel {
     var athletes: [User]?
     var delegate: UsersDelegate?
     
+    init() {
+        getUsers()
+    }
+    
     // MARK: - Functions
-    func getUsers() {
+    func numberOfRows() -> Int {
+        return athletes?.count ?? 0
+    }
+    
+    func getUser(at index: Int) -> User? {
+        return athletes?[index]
+    }
+    
+    // MARK: - Private Functions
+    private func getUsers() {
         delegate?.showActivityIndicator()
         
         ref.observeSingleEvent(of: .value) { snapshot in
@@ -32,17 +46,16 @@ class UsersViewModel {
                    let userData = snapshot.value as? [String: Any] {
                     if let user = self.castToUser(from: userData) {
                         unwrappedAthletes.append(user)
-                        print("User -> \(user.name)") // Imprimir el nombre del usuario
+                        print("User -> \(user.name)")
                     }
                 }
             }
             self.athletes = unwrappedAthletes
+            self.delegate?.didFetchUsers()
             self.delegate?.hideActivityIndicator()
         }
     }
-
     
-    // MARK: - Private Functions
     private func castToUser(from dictionary: [String: Any]) -> User? {
         do {
             let data = try JSONSerialization.data(withJSONObject: dictionary, options: [])

@@ -12,6 +12,8 @@
 		9F02CBBD2BE194B500642FD3 /* GymTrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */; };
 		9F02CBBF2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */; };
 		9F15CB012BED247A00626A92 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB002BED247A00626A92 /* UsersViewModel.swift */; };
+		9F15CB092BED3F1C00626A92 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */; };
+		9F15CB0A2BED3F1C00626A92 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */; };
 		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
 		9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */; };
 		9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */; };
@@ -84,6 +86,8 @@
 		9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrainingDay.swift; sourceTree = "<group>"; };
 		9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGymTrainingPlan.swift; sourceTree = "<group>"; };
 		9F15CB002BED247A00626A92 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildMe_Entrenador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 			path = Workout;
 			sourceTree = "<group>";
 		};
+		9F15CB022BED34F700626A92 /* UserTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */,
+				9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */,
+			);
+			path = UserTableViewCell;
+			sourceTree = "<group>";
+		};
 		9F90BD552BDFEFCA005AABF4 = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +291,7 @@
 		9F90BD7B2BDFF039005AABF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F15CB022BED34F700626A92 /* UserTableViewCell */,
 				9FE89D372BEC0DD000704A4E /* ForgotPassword */,
 				9F90BDD22BDFFF9F005AABF4 /* Login */,
 				9F90BDD12BDFFF99005AABF4 /* Signup */,
@@ -484,6 +498,7 @@
 				9F90BDE02BE00025005AABF4 /* UsersViewController.xib in Resources */,
 				9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */,
 				9F90BDEC2BE00048005AABF4 /* ProfileViewController.xib in Resources */,
+				9F15CB0A2BED3F1C00626A92 /* UsersTableViewCell.xib in Resources */,
 				9F90BDE82BE0003D005AABF4 /* DietViewController.xib in Resources */,
 				9F90BD6E2BDFEFCD005AABF4 /* LaunchScreen.storyboard in Resources */,
 				9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */,
@@ -508,6 +523,7 @@
 				9F90BDEB2BE00048005AABF4 /* ProfileViewController.swift in Sources */,
 				9F90BDB92BDFFD4E005AABF4 /* LoginViewModel.swift in Sources */,
 				9FE89D3D2BEC105F00704A4E /* ForgotPasswordViewModel.swift in Sources */,
+				9F15CB092BED3F1C00626A92 /* UsersTableViewCell.swift in Sources */,
 				9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */,
 				9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */,
 				9F90BDBF2BDFFDD8005AABF4 /* RecipeViewModel.swift in Sources */,
