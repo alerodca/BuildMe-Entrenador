@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class WorkoutViewController: UIViewController {
 
+    let ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        strengthRoutine()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func strengthRoutine() {
+        let rutina = StregthRoutine.rutinaFuerza.toDictionary()
+        
+        ref.child("\(Constants.routineChild)/\(Constants.strengthRoutine)").setValue(rutina) { (error, ref) in
+            if let error = error {
+                print("Error al subir el objeto:", error.localizedDescription)
+            } else {
+                print("Objeto subido exitosamente a la base de datos")
+            }
+        }
     }
-    */
 
 }

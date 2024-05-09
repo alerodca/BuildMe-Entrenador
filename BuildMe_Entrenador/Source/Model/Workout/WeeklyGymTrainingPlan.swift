@@ -8,17 +8,31 @@
 import Foundation
 
 struct WeeklyGymTrainingPlan {
-    var startDate: Date // Fecha de inicio del plan de entrenamiento semanal
-    var durationInWeeks: Int // Duración en semanas del plan de entrenamiento
     var trainingDays: [GymTrainingDay] // Lista de días de entrenamiento para la semana
-    var restDays: [Date] // Lista de días de descanso durante el plan de entrenamiento
+    var restDays: [DayOfWeek] // Lista de días de descanso durante el plan de entrenamiento
     var goal: TrainingGoal // Objetivo de entrenamiento para la semana
     var notes: String? // Notas adicionales sobre el plan de entrenamiento
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [
+            "goal": goal.rawValue,
+            "notes": notes ?? ""
+        ]
+        
+        // Convertir los arrays a arrays de strings
+        let trainingDayDictionaries = trainingDays.map { $0.toDictionary() }
+        dictionary["trainingDays"] = trainingDayDictionaries
+        
+        let restDayStrings = restDays.map { $0.rawValue }
+        dictionary["restDays"] = restDayStrings
+        
+        return dictionary
+    }
 }
 
-enum TrainingGoal {
-    case muscleGain
-    case fatLoss
-    case strengthBuilding
-    case enduranceImprovement
+enum TrainingGoal: String {
+    case muscleGain = "Muscle Gain"
+    case fatLoss = "Fat Loss"
+    case strengthBuilding = "Strength Building"
+    case enduranceImprovement = "Endurance Improvement"
 }

@@ -12,11 +12,34 @@ struct GymExercise {
     var muscleGroups: [MuscleGroup] // Grupos musculares trabajados por el ejercicio
     var equipment: [Equipment] // Equipamiento necesario para el ejercicio
     var instructions: String // Instrucciones detalladas sobre cómo realizar el ejercicio
-    var videoURL: URL? // URL de un video demostrativo del ejercicio (opcional)
     var image: String? // Imagen del ejercicio (opcional)
     var difficulty: ExerciseDifficulty // Nivel de dificultad del ejercicio
     var repetitions: Int // Número de repeticiones
     var sets: Int // Número de series
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [
+            "name": name,
+            "instructions": instructions,
+            "difficulty": difficulty.rawValue,
+            "repetitions": repetitions,
+            "sets": sets
+        ]
+        
+        // Convertir los arrays a arrays de strings
+        let muscleGroupStrings = muscleGroups.map { $0.rawValue }
+        let equipmentStrings = equipment.map { $0.rawValue }
+        
+        dictionary["muscleGroups"] = muscleGroupStrings
+        dictionary["equipment"] = equipmentStrings
+        
+        // Agregar la imagen si existe
+        if let image = image {
+            dictionary["image"] = image
+        }
+        
+        return dictionary
+    }
 }
 
 enum MuscleGroup: String {

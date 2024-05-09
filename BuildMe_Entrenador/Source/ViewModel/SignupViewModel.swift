@@ -17,6 +17,14 @@ protocol ImagePickerDelegate: AnyObject {
     func enableButtons()
 }
 
+protocol AuthControllerDelegate: AnyObject {
+    func showAlert(title: String, message: String, isError: Bool)
+    func navigate()
+    func authComplete()
+    func showIndicator()
+    func hideIndicator()
+}
+
 class SignupViewModel: NSObject {
     
     // MARK: - Variables

@@ -9,18 +9,19 @@ import Foundation
 import FirebaseAuth
 import FirebaseDatabase
 
-protocol AuthControllerDelegate: AnyObject {
+protocol LoginAuthControllerDelegate: AnyObject {
     func showAlert(title: String, message: String, isError: Bool)
     func navigate()
     func authComplete()
     func showIndicator()
     func hideIndicator()
+    func navigateToForgotPassword()
 }
 
 class LoginViewModel {
     
     // MARK: - Variables
-    weak var delegate: AuthControllerDelegate?
+    weak var delegate: LoginAuthControllerDelegate?
     var errorMessage = ""
     
     // MARK: - Functions
@@ -68,7 +69,9 @@ class LoginViewModel {
         }
     }
 
-
+    func forgotPassword() {
+        delegate?.navigateToForgotPassword()
+    }
     
     func navigatoToSignUp() {
         delegate?.navigate()
