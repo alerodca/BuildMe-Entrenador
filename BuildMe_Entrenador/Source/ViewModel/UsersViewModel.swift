@@ -14,12 +14,18 @@ protocol UsersDelegate {
     func didFetchUsers()
 }
 
+protocol UsersFilterDelegate {
+    func didFilterUsers(filteredAthletes: [User])
+}
+
 class UsersViewModel {
     
     // MARK: - Variables
     let ref = Database.database().reference().child(Constants.athleteChild)
     var athletes: [User]?
+    var filteredAthletes: [User]?
     var delegate: UsersDelegate?
+    var filterDelegate: UsersFilterDelegate?
     
     init() {
         getUsers()
@@ -27,11 +33,23 @@ class UsersViewModel {
     
     // MARK: - Functions
     func numberOfRows() -> Int {
-        return athletes?.count ?? 0
+        return filteredAthletes?.count ?? 0
     }
     
     func getUser(at index: Int) -> User? {
-        return athletes?[index]
+        return filteredAthletes?[index]
+    }
+    
+    func filterUsers(with searchText: String) {
+        guard let athletes = athletes else { return }
+        
+        if searchText.isEmpty {
+            filteredAthletes = athletes
+        } else {
+            filteredAthletes = athletes.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
+        
+        filterDelegate?.didFilterUsers(filteredAthletes: filteredAthletes ?? [])
     }
     
     // MARK: - Private Functions
@@ -51,6 +69,7 @@ class UsersViewModel {
                 }
             }
             self.athletes = unwrappedAthletes
+            self.filteredAthletes = unwrappedAthletes
             self.delegate?.didFetchUsers()
             self.delegate?.hideActivityIndicator()
         }
@@ -68,4 +87,3 @@ class UsersViewModel {
         }
     }
 }
-

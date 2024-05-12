@@ -11,8 +11,8 @@ import JGProgressHUD
 class UsersViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet var searchTextField: UITextField!
-    @IBOutlet var searchButton: UIButton!
+    
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var viewTableView: UIView!
     @IBOutlet var tableView: UITableView!
     
@@ -36,9 +36,11 @@ class UsersViewController: UIViewController {
         
         viewmodel.delegate = self
         tableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        searchTextField.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        
+        searchBar.delegate = self
+        viewmodel.filterDelegate = self
         
         viewTableView.layer.cornerRadius = 15
         viewTableView.layer.masksToBounds = true
@@ -63,16 +65,26 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         emailAttributedString.append(NSAttributedString(string: user.email))
         cell.emailLabel.attributedText = emailAttributedString
         
-
+        
         cell.imageViewCell.loadImage(from: user.profileImageURL)
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = viewmodel.getUser(at: indexPath.row) else { return }
+        print("Usuario seleccionado: \(user)")
+    }
 }
 
 // MARK: - Extension UsersDelegate
-extension UsersViewController: UsersDelegate {
+extension UsersViewController: UsersDelegate, UsersFilterDelegate {
+    func didFilterUsers(filteredAthletes: [User]) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     func didFetchUsers() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -94,6 +106,22 @@ extension UsersViewController: UsersDelegate {
     }
 }
 
-extension UsersViewController: UITextFieldDelegate {
+// MARK: - Extension UISearchBarDelegate
+extension UsersViewController: UISearchBarDelegate, UITextFieldDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewmodel.filterUsers(with: searchText)
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Oculta el teclado
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Este método se llama cuando se toca fuera de los text fields
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Oculta el teclado
+        view.endEditing(true)
+    }
 }
+
