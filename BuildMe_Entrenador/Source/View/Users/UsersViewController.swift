@@ -66,20 +66,24 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.emailLabel.attributedText = emailAttributedString
         
         
-        cell.imageViewCell.loadImage(from: user.profileImageURL)
+        cell.imageViewCell.loadImage(from: user.profileImageView)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let user = viewmodel.getUser(at: indexPath.row) else { return }
+        let vc = UserDetailViewController(athlete: user)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
         print("Usuario seleccionado: \(user)")
     }
 }
 
 // MARK: - Extension UsersDelegate
 extension UsersViewController: UsersDelegate, UsersFilterDelegate {
-    func didFilterUsers(filteredAthletes: [User]) {
+    func didFilterUsers(filteredAthletes: [Athlete]) {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

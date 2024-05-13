@@ -15,6 +15,9 @@
 		9F15CB092BED3F1C00626A92 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */; };
 		9F15CB0A2BED3F1C00626A92 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */; };
 		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
+		9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */; };
+		9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */; };
+		9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BC12BF279C2003A8269 /* Athlete.swift */; };
 		9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */; };
 		9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */; };
 		9F90BD6B2BDFEFCD005AABF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BD6A2BDFEFCD005AABF4 /* Assets.xcassets */; };
@@ -88,6 +91,9 @@
 		9F15CB002BED247A00626A92 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
+		9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
+		9F8B4BC12BF279C2003A8269 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 		9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildMe_Entrenador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +200,15 @@
 				9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */,
 			);
 			path = UserTableViewCell;
+			sourceTree = "<group>";
+		};
+		9F8B4BBC2BF27746003A8269 /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */,
+				9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */,
+			);
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		9F90BD552BDFEFCA005AABF4 = {
@@ -310,6 +325,7 @@
 				9F02CBB92BE1919200642FD3 /* Workout */,
 				9F02CBB82BE1917700642FD3 /* Diet */,
 				9F90BDB42BDFFCBF005AABF4 /* User.swift */,
+				9F8B4BC12BF279C2003A8269 /* Athlete.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +360,7 @@
 		9F90BDCF2BDFFF87005AABF4 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				9F8B4BBC2BF27746003A8269 /* UserDetail */,
 				9F90BDDD2BE00025005AABF4 /* UsersViewController.swift */,
 				9F90BDDE2BE00025005AABF4 /* UsersViewController.xib */,
 			);
@@ -496,6 +513,7 @@
 			files = (
 				9F90BDE42BE00033005AABF4 /* WorkoutViewController.xib in Resources */,
 				9F90BDE02BE00025005AABF4 /* UsersViewController.xib in Resources */,
+				9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */,
 				9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */,
 				9F90BDEC2BE00048005AABF4 /* ProfileViewController.xib in Resources */,
 				9F15CB0A2BED3F1C00626A92 /* UsersTableViewCell.xib in Resources */,
@@ -546,7 +564,9 @@
 				9F90BDE72BE0003D005AABF4 /* DietViewController.swift in Sources */,
 				9F02CBBD2BE194B500642FD3 /* GymTrainingDay.swift in Sources */,
 				9FB009722BE9293F008F39A9 /* Training.swift in Sources */,
+				9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */,
 				9F02CBB52BE1905200642FD3 /* DailyMealPlan.swift in Sources */,
+				9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,15 +15,15 @@ protocol UsersDelegate {
 }
 
 protocol UsersFilterDelegate {
-    func didFilterUsers(filteredAthletes: [User])
+    func didFilterUsers(filteredAthletes: [Athlete])
 }
 
 class UsersViewModel {
     
     // MARK: - Variables
     let ref = Database.database().reference().child(Constants.athleteChild)
-    var athletes: [User]?
-    var filteredAthletes: [User]?
+    var athletes: [Athlete]?
+    var filteredAthletes: [Athlete]?
     var delegate: UsersDelegate?
     var filterDelegate: UsersFilterDelegate?
     
@@ -36,7 +36,7 @@ class UsersViewModel {
         return filteredAthletes?.count ?? 0
     }
     
-    func getUser(at index: Int) -> User? {
+    func getUser(at index: Int) -> Athlete? {
         return filteredAthletes?[index]
     }
     
@@ -57,7 +57,7 @@ class UsersViewModel {
         delegate?.showActivityIndicator()
         
         ref.observeSingleEvent(of: .value) { snapshot in
-            var unwrappedAthletes = [User]()
+            var unwrappedAthletes = [Athlete]()
             
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
@@ -75,11 +75,11 @@ class UsersViewModel {
         }
     }
     
-    private func castToUser(from dictionary: [String: Any]) -> User? {
+    private func castToUser(from dictionary: [String: Any]) -> Athlete? {
         do {
             let data = try JSONSerialization.data(withJSONObject: dictionary, options: [])
             let decoder = JSONDecoder()
-            let user = try decoder.decode(User.self, from: data)
+            let user = try decoder.decode(Athlete.self, from: data)
             return user
         } catch {
             print("Error casting data to User: \(error)")
