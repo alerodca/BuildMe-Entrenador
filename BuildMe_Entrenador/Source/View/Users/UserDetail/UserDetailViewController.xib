@@ -11,6 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserDetailViewController" customModule="BuildMe_Entrenador" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="4Um-OC-AZo" id="qcC-rk-3r3"/>
+                <outlet property="clinicHistoryTextView" destination="uCl-Ya-J4a" id="v2R-Rq-cX4"/>
+                <outlet property="dietAssignedTextView" destination="01e-to-tBV" id="Dqc-Av-ohp"/>
+                <outlet property="injuryHistoryTextView" destination="E8m-dG-fI6" id="JIL-kQ-c3n"/>
+                <outlet property="personalDataTextView" destination="xMy-nL-abP" id="vT1-rV-Yx5"/>
+                <outlet property="profileImageView" destination="lOs-ea-Zbm" id="03I-p5-ny9"/>
+                <outlet property="routineAssignedTextView" destination="gxB-Ug-Lg4" id="N2T-Dd-wOc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,12 +50,90 @@
                                 <constraint firstAttribute="height" constant="50" id="Nuo-8R-Dko"/>
                             </constraints>
                         </stackView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="E8m-dG-fI6">
+                            <rect key="frame" x="16" y="697" width="348" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="I0D-eO-Ab8"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="uCl-Ya-J4a">
+                            <rect key="frame" x="16" y="639" width="348" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="6P7-5w-ucg"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-Ug-Lg4">
+                            <rect key="frame" x="16" y="581" width="348" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="xDC-bC-unG"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="01e-to-tBV">
+                            <rect key="frame" x="16" y="523" width="348" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="SnE-6C-b0F"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOs-ea-Zbm">
+                            <rect key="frame" x="100" y="16" width="180" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="0fM-Y4-Pso"/>
+                                <constraint firstAttribute="width" constant="180" id="Z3n-Tb-Sm8"/>
+                            </constraints>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xMy-nL-abP">
+                            <rect key="frame" x="16" y="182" width="348" height="325"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="xMy-nL-abP" firstAttribute="top" secondItem="lOs-ea-Zbm" secondAttribute="bottom" constant="16" id="2cR-3J-4r4"/>
+                        <constraint firstAttribute="trailing" secondItem="xMy-nL-abP" secondAttribute="trailing" constant="16" id="53L-LA-GCS"/>
+                        <constraint firstItem="uCl-Ya-J4a" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="62N-yR-rVM"/>
+                        <constraint firstItem="01e-to-tBV" firstAttribute="top" secondItem="xMy-nL-abP" secondAttribute="bottom" constant="16" id="8Vm-7F-36a"/>
+                        <constraint firstItem="01e-to-tBV" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="AHA-Qh-B92"/>
+                        <constraint firstAttribute="trailing" secondItem="gxB-Ug-Lg4" secondAttribute="trailing" constant="16" id="NFn-Ch-71q"/>
+                        <constraint firstItem="E8m-dG-fI6" firstAttribute="top" secondItem="uCl-Ya-J4a" secondAttribute="bottom" constant="8" id="NL9-oP-vRy"/>
+                        <constraint firstAttribute="trailing" secondItem="E8m-dG-fI6" secondAttribute="trailing" constant="16" id="Rgc-78-pgX"/>
+                        <constraint firstItem="gxB-Ug-Lg4" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="Tv6-dE-QW8"/>
+                        <constraint firstItem="xMy-nL-abP" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="ULA-dQ-Jtc"/>
+                        <constraint firstItem="E8m-dG-fI6" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="UOS-hc-TwD"/>
+                        <constraint firstItem="ukS-Qh-ZHC" firstAttribute="top" secondItem="E8m-dG-fI6" secondAttribute="bottom" constant="16" id="Urg-vY-vp4"/>
                         <constraint firstAttribute="bottom" secondItem="ukS-Qh-ZHC" secondAttribute="bottom" constant="16" id="Uvb-1n-ja8"/>
+                        <constraint firstAttribute="trailing" secondItem="lOs-ea-Zbm" secondAttribute="trailing" constant="100" id="WLv-6w-EGJ"/>
+                        <constraint firstAttribute="trailing" secondItem="01e-to-tBV" secondAttribute="trailing" constant="16" id="YlQ-qc-mDt"/>
                         <constraint firstItem="ukS-Qh-ZHC" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="16" id="ZgS-hA-v1h"/>
                         <constraint firstAttribute="trailing" secondItem="ukS-Qh-ZHC" secondAttribute="trailing" constant="16" id="ZtO-Kd-QNo"/>
+                        <constraint firstItem="lOs-ea-Zbm" firstAttribute="leading" secondItem="4Um-OC-AZo" secondAttribute="leading" constant="100" id="b2f-FM-TDf"/>
+                        <constraint firstItem="lOs-ea-Zbm" firstAttribute="top" secondItem="4Um-OC-AZo" secondAttribute="top" constant="16" id="ekc-bM-fhH"/>
+                        <constraint firstItem="uCl-Ya-J4a" firstAttribute="top" secondItem="gxB-Ug-Lg4" secondAttribute="bottom" constant="8" id="jPb-SC-xbw"/>
+                        <constraint firstAttribute="trailing" secondItem="uCl-Ya-J4a" secondAttribute="trailing" constant="16" id="u3x-4x-hbx"/>
+                        <constraint firstItem="gxB-Ug-Lg4" firstAttribute="top" secondItem="01e-to-tBV" secondAttribute="bottom" constant="8" id="wUW-Ys-pIb"/>
                     </constraints>
                 </view>
             </subviews>
@@ -65,17 +149,20 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

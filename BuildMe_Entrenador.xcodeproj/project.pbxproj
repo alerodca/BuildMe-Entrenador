@@ -11,6 +11,7 @@
 		9F02CBBB2BE1933400642FD3 /* GymExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBA2BE1933400642FD3 /* GymExercise.swift */; };
 		9F02CBBD2BE194B500642FD3 /* GymTrainingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */; };
 		9F02CBBF2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */; };
+		9F0F08612BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */; };
 		9F15CB012BED247A00626A92 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB002BED247A00626A92 /* UsersViewModel.swift */; };
 		9F15CB092BED3F1C00626A92 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */; };
 		9F15CB0A2BED3F1C00626A92 /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */; };
@@ -88,6 +89,7 @@
 		9F02CBBA2BE1933400642FD3 /* GymExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymExercise.swift; sourceTree = "<group>"; };
 		9F02CBBC2BE194B500642FD3 /* GymTrainingDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymTrainingDay.swift; sourceTree = "<group>"; };
 		9F02CBBE2BE1955E00642FD3 /* WeeklyGymTrainingPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyGymTrainingPlan.swift; sourceTree = "<group>"; };
+		9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSMutableParagraphStyle.swift"; sourceTree = "<group>"; };
 		9F15CB002BED247A00626A92 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		9F15CB072BED3F1C00626A92 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		9F15CB082BED3F1C00626A92 /* UsersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				9F90BDC62BDFFEB2005AABF4 /* Extension+UIImageView.swift */,
 				9F90BDC82BDFFED9005AABF4 /* Extension+UITextfield.swift */,
 				9F90BDCA2BDFFEFE005AABF4 /* Extension+UIView.swift */,
+				9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */,
 				9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */,
 				9F90BDC12BDFFDF4005AABF4 /* Recipe.swift in Sources */,
+				9F0F08612BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift in Sources */,
 				9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */,
 				9FEB3B6D2BE419F300C63DCC /* StregthRoutine.swift in Sources */,
 				9F90BDDB2BE00013005AABF4 /* SignupViewController.swift in Sources */,
