@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GymTrainingDay {
+struct GymTrainingDay: Decodable {
     var dayOfWeek: DayOfWeek // Día de la semana del entrenamiento
     var muscleGroupTarget: [MuscleGroup] // Grupos musculares a trabajar durante el día de entrenamiento
     var exercises: [GymExercise] // Lista de ejercicios del día de entrenamiento

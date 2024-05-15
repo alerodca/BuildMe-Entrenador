@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WeeklyGymTrainingPlan {
+struct WeeklyGymTrainingPlan: Decodable {
     var trainingDays: [GymTrainingDay] // Lista de días de entrenamiento para la semana
     var restDays: [DayOfWeek] // Lista de días de descanso durante el plan de entrenamiento
     var goal: TrainingGoal // Objetivo de entrenamiento para la semana
@@ -30,7 +30,7 @@ struct WeeklyGymTrainingPlan {
     }
 }
 
-enum TrainingGoal: String {
+enum TrainingGoal: String, Decodable {
     case muscleGain = "Muscle Gain"
     case fatLoss = "Fat Loss"
     case strengthBuilding = "Strength Building"

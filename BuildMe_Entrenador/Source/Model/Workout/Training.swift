@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Training {
+class Training: Decodable {
     var name: String?
     var image: String?
     var description: String?
@@ -51,21 +51,21 @@ class Training {
 }
 
 // Enum para representar la duración del entrenamiento
-enum TrainingDuration: String {
+enum TrainingDuration: String, Decodable {
     case short = "Corto (menos de 30 minutos)"
     case medium = "Medio (30-60 minutos)"
     case long = "Largo (más de 60 minutos)"
 }
 
 // Enum para representar la intensidad del entrenamiento
-enum TrainingIntensity: String {
+enum TrainingIntensity: String, Decodable {
     case low = "Baja"
     case medium = "Media"
     case high = "Alta"
 }
 
 // Enum para representar el material necesario para el entrenamiento
-enum TrainingMaterial: String {
+enum TrainingMaterial: String, Decodable {
     case none = "Ninguno"
     case basic = "Básico (sin equipamiento adicional)"
     case advanced = "Avanzado (requiere equipamiento específico)"

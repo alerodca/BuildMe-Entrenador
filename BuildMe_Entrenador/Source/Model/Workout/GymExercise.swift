@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GymExercise {
+struct GymExercise: Decodable {
     var name: String // Nombre del ejercicio
     var muscleGroups: [MuscleGroup] // Grupos musculares trabajados por el ejercicio
     var equipment: [Equipment] // Equipamiento necesario para el ejercicio
@@ -42,7 +42,7 @@ struct GymExercise {
     }
 }
 
-enum MuscleGroup: String {
+enum MuscleGroup: String, Decodable {
     case chest = "Pecho"
     case back = "Espalda"
     case legs = "Piernas"
@@ -66,7 +66,7 @@ enum MuscleGroup: String {
 }
 
 
-enum Equipment: String {
+enum Equipment: String, Decodable {
     case bodyweight = "Peso corporal"
     case dumbbell = "Mancuernas"
     case barbell = "Barra"
@@ -78,7 +78,7 @@ enum Equipment: String {
 }
 
 
-enum ExerciseDifficulty: String {
+enum ExerciseDifficulty: String, Decodable {
     case beginner = "Principiante"
     case intermediate = "Intermedio"
     case advanced = "Avanzado"

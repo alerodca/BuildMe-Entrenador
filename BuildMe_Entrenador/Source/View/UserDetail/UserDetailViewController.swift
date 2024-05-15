@@ -92,12 +92,12 @@ class UserDetailViewController: UIViewController {
         personalDataTextView.layer.cornerRadius = 8.0
         personalDataTextView.clipsToBounds = true
         let titleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 21),
+            .font: UIFont.boldSystemFont(ofSize: 18),
             .paragraphStyle: NSMutableParagraphStyle().centered()
         ]
         let titleString = NSAttributedString(string: "Datos Personales\n", attributes: titleAttributes)
         let boldAttributesPD: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 15)
+            .font: UIFont.boldSystemFont(ofSize: 13)
         ]
         let attributedStringPD = NSMutableAttributedString()
         attributedStringPD.append(titleString)
@@ -110,7 +110,7 @@ class UserDetailViewController: UIViewController {
         attributedStringPD.append(NSAttributedString(string: "Nombre de Usuario: ", attributes: boldAttributes))
         attributedStringPD.append(NSAttributedString(string: "\(athlete.username)\n\n"))
         attributedStringPD.append(NSAttributedString(string: "Número de Teléfono: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.phone)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(String.removeOptional(from: athlete.phone))\n\n"))
         attributedStringPD.append(NSAttributedString(string: "Fecha de Nacimiento: ", attributes: boldAttributes))
         attributedStringPD.append(NSAttributedString(string: "\(athlete.dateBirth)\n\n"))
         attributedStringPD.append(NSAttributedString(string: "Datos de Entrenamiento\n", attributes: titleAttributes))

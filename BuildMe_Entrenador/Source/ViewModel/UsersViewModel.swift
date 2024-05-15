@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseDatabase
 
-protocol UsersDelegate {
+protocol PrincipalTableDelegate {
     func showActivityIndicator()
     func hideActivityIndicator()
     func didFetchUsers()
@@ -24,7 +24,7 @@ class UsersViewModel {
     let ref = Database.database().reference().child(Constants.athleteChild)
     var athletes: [Athlete]?
     var filteredAthletes: [Athlete]?
-    var delegate: UsersDelegate?
+    var delegate: PrincipalTableDelegate?
     var filterDelegate: UsersFilterDelegate?
     
     init() {

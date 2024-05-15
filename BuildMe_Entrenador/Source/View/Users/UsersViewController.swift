@@ -15,6 +15,7 @@ class UsersViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var viewTableView: UIView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var noResultsLabel: UILabel!
     
     // MARK: - Variables
     let viewmodel = UsersViewModel()
@@ -32,10 +33,12 @@ class UsersViewController: UIViewController {
     
     // MARK: - Private Functions
     private func initialConfigure() {
+        noResultsLabel.isHidden = true
+        
         view.applyBlueRedGradient()
         
         viewmodel.delegate = self
-        tableView.register(UINib(nibName: "UsersTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "PrincipalTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -54,19 +57,22 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UsersTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PrincipalTableViewCell,
               let user = viewmodel.getUser(at: indexPath.row) else { return UITableViewCell() }
         
         let nameAttributedString = NSMutableAttributedString(string: "Nombre: ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13)])
         nameAttributedString.append(NSAttributedString(string: user.name))
-        cell.nameLabel.attributedText = nameAttributedString
+        cell.titleOneLabel.attributedText = nameAttributedString
         
         let emailAttributedString = NSMutableAttributedString(string: "Email: ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13)])
         emailAttributedString.append(NSAttributedString(string: user.email))
-        cell.emailLabel.attributedText = emailAttributedString
+        cell.titleSecondLabel.attributedText = emailAttributedString
         
+        let usernameAttributedString = NSMutableAttributedString(string: "Usuario: ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 13)])
+        usernameAttributedString.append(NSAttributedString(string: user.username))
+        cell.titleThirdLabel.attributedText = usernameAttributedString
         
-        cell.imageViewCell.loadImage(from: user.profileImageView)
+        cell.cellImageView.loadImage(from: user.profileImageView)
         
         return cell
     }
@@ -82,8 +88,14 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - Extension UsersDelegate
-extension UsersViewController: UsersDelegate, UsersFilterDelegate {
+extension UsersViewController: PrincipalTableDelegate, UsersFilterDelegate {
     func didFilterUsers(filteredAthletes: [Athlete]) {
+        if filteredAthletes.isEmpty {
+            noResultsLabel.isHidden = false
+        } else {
+            noResultsLabel.isHidden = true
+        }
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

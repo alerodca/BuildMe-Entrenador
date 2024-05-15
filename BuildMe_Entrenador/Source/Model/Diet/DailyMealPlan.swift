@@ -7,22 +7,7 @@
 
 import Foundation
 
-struct WeeklyMealPlan {
-    var numberOfDays: Int
-    var dailyMealPlans: [DailyMealPlan]
-    
-    func convertToDictionary() -> [String: Any] {
-        var dictionary: [String: Any] = [:]
-        
-        // Agregar propiedades de WeeklyMealPlan al diccionario
-        dictionary["numberOfDays"] = numberOfDays
-        dictionary["dailyMealPlans"] = dailyMealPlans.map { $0.convertToDictionary() }
-        
-        return dictionary
-    }
-}
-
-struct DailyMealPlan {
+struct DailyMealPlan: Decodable {
     var dayOfWeek: DayOfWeek
     var breakfast: Recipe
     var brunch: Recipe
@@ -53,7 +38,7 @@ struct DailyMealPlan {
     }
 }
 
-enum DayOfWeek: String {
+enum DayOfWeek: String, Decodable {
     case monday = "Lunes"
     case tuesday = "Martes"
     case wednesday = "Miércoles"
@@ -63,7 +48,7 @@ enum DayOfWeek: String {
     case sunday = "Domingo"
 }
 
-struct NutritionGoals {
+struct NutritionGoals: Decodable {
     var totalCalories: Int
     var proteinGrams: Double
     var carbohydrateGrams: Double
@@ -81,7 +66,7 @@ struct NutritionGoals {
     }
 }
 
-struct NutritionalValues {
+struct NutritionalValues: Decodable {
     var totalCalories: Int
     var proteinGrams: Double
     var carbohydrateGrams: Double
