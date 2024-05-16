@@ -64,7 +64,7 @@ class SignupViewModel: NSObject {
                     return
                 }
                 if let passwordEncrypted = self.encryptPassword(password: password) {
-                    let user = User(name: name, username: username, email: email, password: passwordEncrypted, uid: uid, profileImageURL: profileImageURL)
+                    let user = Trainer(name: name, username: username, email: email, password: passwordEncrypted, uid: uid, profileImageURL: profileImageURL)
                     self.saveUserToDatabase(user: user)
                     self.pickerDelegate?.enableButtons()
                     self.delegate?.authComplete()
@@ -145,7 +145,7 @@ class SignupViewModel: NSObject {
         return hashString
     }
     
-    private func saveUserToDatabase(user: User) {
+    private func saveUserToDatabase(user: Trainer) {
         let databaseRef = Database.database().reference().child(Constants.trainerChild)
         let userDictionary = user.toDictionary()
         databaseRef.child(user.uid).setValue(userDictionary) { error, refDatabase in

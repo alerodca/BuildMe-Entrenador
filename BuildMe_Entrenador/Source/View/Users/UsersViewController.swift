@@ -83,7 +83,6 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
         let navController = UINavigationController(rootViewController: vc)
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
-        print("Usuario seleccionado: \(user)")
     }
 }
 

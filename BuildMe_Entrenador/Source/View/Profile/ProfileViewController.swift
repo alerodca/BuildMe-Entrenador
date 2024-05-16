@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
     // MARK: - Variables
     let hud = JGProgressHUD()
     let viewmodel = ProfileViewModel()
-    var user: User?
+    var user: Trainer?
     var isEditingProfile = false
     
     // MARK: - Lifecycle
@@ -91,8 +91,7 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: ProfileDelegate {
-    func updateUser(user: User) {
-        print("Implementando user en el viewcontroller")
+    func updateUser(user: Trainer) {
         self.user = user
         confUser()
     }
