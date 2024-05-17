@@ -43,6 +43,7 @@ class UsersViewController: UIViewController {
         tableView.delegate = self
         
         searchBar.delegate = self
+        searchBar.backgroundImage = UIImage()
         viewmodel.filterDelegate = self
         
         viewTableView.layer.cornerRadius = 15
@@ -78,16 +79,32 @@ extension UsersViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = viewmodel.getUser(at: indexPath.row) else { return }
-        let vc = UserDetailViewController(athlete: user)
-        let navController = UINavigationController(rootViewController: vc)
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+        if let user = viewmodel.getUser(at: indexPath.row) {
+            let vc = UserDetailViewController(athlete: user)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            present(navController, animated: true)
+        } else {
+            viewmodel.delegate?.showAlert(title: "¡Error!", message: "Hubo un error al navegar al detalle del usuario", isError: true)
+        }
     }
 }
 
 // MARK: - Extension UsersDelegate
 extension UsersViewController: PrincipalTableDelegate, UsersFilterDelegate {
+    func showAlert(title: String, message: String, isError: Bool) {
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
+            JGProgressHUDSuccessIndicatorView()
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 3, animated: true)
+        }
+    }
+    
     func didFilterUsers(filteredAthletes: [Athlete]) {
         if filteredAthletes.isEmpty {
             noResultsLabel.isHidden = false

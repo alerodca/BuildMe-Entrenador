@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class UserDetailViewController: UIViewController {
     
@@ -38,7 +39,6 @@ class UserDetailViewController: UIViewController {
     }
     
     // MARK: - Actions & Selectors
-    
     @objc func dismissSelf() {
         dismiss(animated: true, completion: nil)
     }
@@ -47,7 +47,9 @@ class UserDetailViewController: UIViewController {
     private func initialConfigure() {
         view.applyBlueRedGradient()
         
-        let backButton = UIBarButtonItem(title: "Atrás", style: .plain, target: self, action: #selector(dismissSelf))
+        let backImage = UIImage(systemName: "arrow.backward")
+        let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(dismissSelf))
+        backButton.tintColor = .white
         backButton.setTitleTextAttributes(
             [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white],
             for: .normal)
@@ -57,6 +59,8 @@ class UserDetailViewController: UIViewController {
         backgroundView.layer.masksToBounds = true
         
         profileImageView.loadImage(from: athlete.profileImageView)
+        profileImageView.layer.cornerRadius = 8.0
+        profileImageView.clipsToBounds = true
         
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15)

@@ -35,7 +35,7 @@
                     <rect key="frame" x="16" y="46" width="343" height="716"/>
                     <subviews>
                         <searchBar contentMode="redraw" placeholder="Busca un usuario concreto" translatesAutoresizingMaskIntoConstraints="NO" id="pjh-QF-v54">
-                            <rect key="frame" x="16" y="16" width="311" height="50"/>
+                            <rect key="frame" x="8" y="8" width="327" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="bUg-Oh-SpK"/>
                             </constraints>
@@ -45,10 +45,10 @@
                             </connections>
                         </searchBar>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zg5-BH-rOP">
-                            <rect key="frame" x="0.0" y="66" width="343" height="650"/>
+                            <rect key="frame" x="0.0" y="58" width="343" height="658"/>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No ha habido resultado de la busqueda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3f-bX-mCM">
-                            <rect key="frame" x="16" y="241" width="311" height="100"/>
+                            <rect key="frame" x="16" y="233" width="311" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="yF0-HT-yWD"/>
                             </constraints>
@@ -59,16 +59,16 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="pjh-QF-v54" secondAttribute="trailing" constant="16" id="Aq8-Rv-Fqr"/>
+                        <constraint firstAttribute="trailing" secondItem="pjh-QF-v54" secondAttribute="trailing" constant="8" id="Aq8-Rv-Fqr"/>
                         <constraint firstAttribute="trailing" secondItem="Zg5-BH-rOP" secondAttribute="trailing" id="Otn-ep-psk"/>
                         <constraint firstItem="Z3f-bX-mCM" firstAttribute="leading" secondItem="6RV-Fe-gk7" secondAttribute="leading" constant="16" id="QmR-f2-plk"/>
                         <constraint firstItem="Z3f-bX-mCM" firstAttribute="top" secondItem="pjh-QF-v54" secondAttribute="bottom" constant="175" id="Zl2-Fq-9rC"/>
                         <constraint firstAttribute="bottom" secondItem="Zg5-BH-rOP" secondAttribute="bottom" id="aCp-Ao-ks5"/>
                         <constraint firstAttribute="trailing" secondItem="Z3f-bX-mCM" secondAttribute="trailing" constant="16" id="bnN-z4-NHo"/>
                         <constraint firstItem="Zg5-BH-rOP" firstAttribute="leading" secondItem="6RV-Fe-gk7" secondAttribute="leading" id="lxG-uG-JXX"/>
-                        <constraint firstItem="pjh-QF-v54" firstAttribute="top" secondItem="6RV-Fe-gk7" secondAttribute="top" constant="16" id="mgu-Yj-gUC"/>
+                        <constraint firstItem="pjh-QF-v54" firstAttribute="top" secondItem="6RV-Fe-gk7" secondAttribute="top" constant="8" id="mgu-Yj-gUC"/>
                         <constraint firstItem="Zg5-BH-rOP" firstAttribute="top" secondItem="pjh-QF-v54" secondAttribute="bottom" id="oju-rz-3YR"/>
-                        <constraint firstItem="pjh-QF-v54" firstAttribute="leading" secondItem="6RV-Fe-gk7" secondAttribute="leading" constant="16" id="zYa-pj-xYB"/>
+                        <constraint firstItem="pjh-QF-v54" firstAttribute="leading" secondItem="6RV-Fe-gk7" secondAttribute="leading" constant="8" id="zYa-pj-xYB"/>
                     </constraints>
                 </view>
             </subviews>

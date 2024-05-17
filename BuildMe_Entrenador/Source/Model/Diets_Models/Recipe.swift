@@ -35,7 +35,7 @@ class Recipe: Decodable {
             "preparationTime": preparationTime,
             "servings": servings,
             "image": image,
-            "nutritionalValues": nutritionalValues,
+            "nutritionalValues": nutritionalValues.toDictionary(),
             "mealType": mealType.rawValue,
             "tips": tips ?? ""
         ]

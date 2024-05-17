@@ -30,7 +30,7 @@ enum MuscleGroup: String, Decodable {
     case upperBack = "Espalda alta"
 }
 
-enum Day: String, Decodable {
+enum Day: String, Decodable, CaseIterable {
     case monday = "Lunes"
     case tuesday = "Martes"
     case wednesday = "Miércoles"
@@ -65,6 +65,5 @@ enum MealType: String, Decodable {
     case lunch = "Almuerzo"
     case dinner = "Cena"
     case snack = "Snack"
-    case dessert = "Postre"
-    case other = "Otro"
+    case midMorningSnack = "Media Mañana"
 }

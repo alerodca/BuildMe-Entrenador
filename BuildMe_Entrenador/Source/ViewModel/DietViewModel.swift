@@ -1,32 +1,25 @@
 //
-//  UsersViewModel.swift
+//  DietViewModel.swift
 //  BuildMe_Entrenador
 //
-//  Created by Alejandro Rodríguez Cañete on 9/5/24.
+//  Created by Alejandro Rodríguez Cañete on 16/5/24.
 //
 
 import Foundation
 import FirebaseDatabase
 
-protocol PrincipalTableDelegate {
-    func showActivityIndicator()
-    func hideActivityIndicator()
-    func didFetchUsers()
-    func showAlert(title: String, message: String, isError: Bool) 
+protocol DietFilterDelegate {
+    func didFilterDiet(filteredAthletes: [Diet])
 }
 
-protocol UsersFilterDelegate {
-    func didFilterUsers(filteredAthletes: [Athlete])
-}
-
-class UsersViewModel {
+class DietViewModel {
     
     // MARK: - Variables
-    let ref = Database.database().reference().child(Constants.athleteChild)
-    var athletes: [Athlete]?
-    var filteredAthletes: [Athlete]?
+    let ref = Database.database().reference().child(Constants.dietChild)
+    var diets: [Diet]?
+    var filteredDiet: [Diet]?
     var delegate: PrincipalTableDelegate?
-    var filterDelegate: UsersFilterDelegate?
+    var filterDelegate: DietFilterDelegate?
     
     init() {
         getUsers()
@@ -34,23 +27,23 @@ class UsersViewModel {
     
     // MARK: - Functions
     func numberOfRows() -> Int {
-        return filteredAthletes?.count ?? 0
+        return filteredDiet?.count ?? 0
     }
     
-    func getUser(at index: Int) -> Athlete? {
-        return filteredAthletes?[index]
+    func getDiet(at index: Int) -> Diet? {
+        return filteredDiet?[index]
     }
     
-    func filterUsers(with searchText: String) {
-        guard let athletes = athletes else { return }
+    func filterDiet(with searchText: String) {
+        guard let diets = diets else { return }
         
         if searchText.isEmpty {
-            filteredAthletes = athletes
+            filteredDiet = diets
         } else {
-            filteredAthletes = athletes.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            filteredDiet = diets.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
         
-        filterDelegate?.didFilterUsers(filteredAthletes: filteredAthletes ?? [])
+        filterDelegate?.didFilterDiet(filteredAthletes: filteredDiet ?? [])
     }
     
     // MARK: - Private Functions
@@ -58,7 +51,7 @@ class UsersViewModel {
         delegate?.showActivityIndicator()
         
         ref.observeSingleEvent(of: .value) { snapshot in
-            var unwrappedAthletes = [Athlete]()
+            var unwrappedAthletes = [Diet]()
             
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
@@ -69,18 +62,18 @@ class UsersViewModel {
                     }
                 }
             }
-            self.athletes = unwrappedAthletes
-            self.filteredAthletes = unwrappedAthletes
+            self.diets = unwrappedAthletes
+            self.filteredDiet = unwrappedAthletes
             self.delegate?.didFetchUsers()
             self.delegate?.hideActivityIndicator()
         }
     }
     
-    private func castToUser(from dictionary: [String: Any]) -> Athlete? {
+    private func castToUser(from dictionary: [String: Any]) -> Diet? {
         do {
             let data = try JSONSerialization.data(withJSONObject: dictionary, options: [])
             let decoder = JSONDecoder()
-            let user = try decoder.decode(Athlete.self, from: data)
+            let user = try decoder.decode(Diet.self, from: data)
             return user
         } catch {
             print("Error casting data to User: \(error)")

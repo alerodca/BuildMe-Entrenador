@@ -20,7 +20,7 @@ class NutritionalValues: Decodable {
         self.fat = fat
     }
     
-    func toDictionary() -> [String: Double] {
+    func toDictionary() -> [String: Any] {
         return [
             "calories": calories,
             "protein": protein,

@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F00F5A22BF5DAA400A2CE23 /* StregthRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F00F5A12BF5DAA400A2CE23 /* StregthRoutine.swift */; };
+		9F02647D2BF5FA7200B39F9F /* MediterranianDiet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F02647C2BF5FA7200B39F9F /* MediterranianDiet.swift */; };
 		9F0F08612BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */; };
+		9F11449A2BF674F6008D650C /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1144992BF674F6008D650C /* WorkoutViewModel.swift */; };
+		9F11449C2BF67500008D650C /* DietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F11449B2BF67500008D650C /* DietViewModel.swift */; };
 		9F15CB012BED247A00626A92 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F15CB002BED247A00626A92 /* UsersViewModel.swift */; };
 		9F160AB02BF524CC00DC4C06 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F160AAE2BF524CC00DC4C06 /* WorkoutViewController.swift */; };
 		9F160AB12BF524CC00DC4C06 /* WorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F160AAF2BF524CC00DC4C06 /* WorkoutViewController.xib */; };
@@ -77,6 +81,8 @@
 		9F90BDEB2BE00048005AABF4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BDE92BE00048005AABF4 /* ProfileViewController.swift */; };
 		9F90BDEC2BE00048005AABF4 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BDEA2BE00048005AABF4 /* ProfileViewController.xib */; };
 		9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */; };
+		9FB065322BF7B826008963FF /* RoutineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB065302BF7B826008963FF /* RoutineDetailViewController.swift */; };
+		9FB065332BF7B826008963FF /* RoutineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */; };
 		9FE89D362BEBD5AB00704A4E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */; };
 		9FE89D3A2BEC0DF700704A4E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D382BEC0DF700704A4E /* ForgotPasswordViewController.swift */; };
 		9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE89D392BEC0DF700704A4E /* ForgotPasswordViewController.xib */; };
@@ -84,7 +90,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F00F5A12BF5DAA400A2CE23 /* StregthRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StregthRoutine.swift; sourceTree = "<group>"; };
+		9F02647C2BF5FA7200B39F9F /* MediterranianDiet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediterranianDiet.swift; sourceTree = "<group>"; };
 		9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSMutableParagraphStyle.swift"; sourceTree = "<group>"; };
+		9F1144992BF674F6008D650C /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		9F11449B2BF67500008D650C /* DietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewModel.swift; sourceTree = "<group>"; };
 		9F15CB002BED247A00626A92 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		9F160AAE2BF524CC00DC4C06 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		9F160AAF2BF524CC00DC4C06 /* WorkoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +138,8 @@
 		9F90BDE92BE00048005AABF4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9F90BDEA2BE00048005AABF4 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FB065302BF7B826008963FF /* RoutineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailViewController.swift; sourceTree = "<group>"; };
+		9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineDetailViewController.xib; sourceTree = "<group>"; };
 		9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9FE89D382BEC0DF700704A4E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		9FE89D392BEC0DF700704A4E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -173,6 +185,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F00F5A02BF5DA8E00A2CE23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9F00F5A12BF5DAA400A2CE23 /* StregthRoutine.swift */,
+				9F02647C2BF5FA7200B39F9F /* MediterranianDiet.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		9F23466F2BF52D41005FAB13 /* People_Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +281,7 @@
 		9F90BD752BDFEFDD005AABF4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				9F00F5A02BF5DA8E00A2CE23 /* Data */,
 				9FE89D342BEBD56C00704A4E /* Custom UI Objects */,
 				9F90BD7C2BDFF03C005AABF4 /* Model */,
 				9F90BD7B2BDFF039005AABF4 /* View */,
@@ -316,6 +338,8 @@
 				9F90BDBC2BDFFDA8005AABF4 /* ProfileViewModel.swift */,
 				9FE89D3C2BEC105F00704A4E /* ForgotPasswordViewModel.swift */,
 				9F15CB002BED247A00626A92 /* UsersViewModel.swift */,
+				9F1144992BF674F6008D650C /* WorkoutViewModel.swift */,
+				9F11449B2BF67500008D650C /* DietViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -323,6 +347,7 @@
 		9F90BD7B2BDFF039005AABF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9FB0652F2BF7B7FF008963FF /* RoutineDetail */,
 				9F8B4BBC2BF27746003A8269 /* UserDetail */,
 				9F6DB85F2BF49795001BAC32 /* Cells */,
 				9FE89D372BEC0DD000704A4E /* ForgotPassword */,
@@ -408,6 +433,15 @@
 				9F90BDD62BE00007005AABF4 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9FB0652F2BF7B7FF008963FF /* RoutineDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9FB065302BF7B826008963FF /* RoutineDetailViewController.swift */,
+				9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */,
+			);
+			path = RoutineDetail;
 			sourceTree = "<group>";
 		};
 		9FE89D342BEBD56C00704A4E /* Custom UI Objects */ = {
@@ -519,6 +553,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB065332BF7B826008963FF /* RoutineDetailViewController.xib in Resources */,
 				9F90BDE02BE00025005AABF4 /* UsersViewController.xib in Resources */,
 				9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */,
 				9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */,
@@ -543,7 +578,10 @@
 			files = (
 				9FE89D362BEBD5AB00704A4E /* CustomTextField.swift in Sources */,
 				9F90BDC52BDFFE77005AABF4 /* Extension+String.swift in Sources */,
+				9FB065322BF7B826008963FF /* RoutineDetailViewController.swift in Sources */,
+				9F11449C2BF67500008D650C /* DietViewModel.swift in Sources */,
 				9F15CB012BED247A00626A92 /* UsersViewModel.swift in Sources */,
+				9F11449A2BF674F6008D650C /* WorkoutViewModel.swift in Sources */,
 				9F90BDBD2BDFFDA8005AABF4 /* ProfileViewModel.swift in Sources */,
 				9FE89D3A2BEC0DF700704A4E /* ForgotPasswordViewController.swift in Sources */,
 				9F160AB92BF5256C00DC4C06 /* Trainer.swift in Sources */,
@@ -552,6 +590,7 @@
 				9FE89D3D2BEC105F00704A4E /* ForgotPasswordViewModel.swift in Sources */,
 				9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */,
 				9F23467B2BF536CC005FAB13 /* DietDay.swift in Sources */,
+				9F00F5A22BF5DAA400A2CE23 /* StregthRoutine.swift in Sources */,
 				9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */,
 				9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */,
 				9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */,
@@ -563,6 +602,7 @@
 				9F23466E2BF52D04005FAB13 /* Enums.swift in Sources */,
 				9F2346752BF52F80005FAB13 /* Training.swift in Sources */,
 				9F90BDDF2BE00025005AABF4 /* UsersViewController.swift in Sources */,
+				9F02647D2BF5FA7200B39F9F /* MediterranianDiet.swift in Sources */,
 				9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */,
 				9F90BDD42BDFFFDE005AABF4 /* TabBarController.swift in Sources */,
 				9F90BDC32BDFFE29005AABF4 /* Constants.swift in Sources */,
