@@ -153,7 +153,10 @@ extension RoutineDetailViewController: UITableViewDelegate, UITableViewDataSourc
         if isRestDay {
             showAlert(title: "¡Día de Descanso!", message: "Hoy te toca descanso, mañana puedes emplear todas tus fuerzas", isError: true)
         } else if let exerciseDay = training.exerciseDays.first(where: { $0.day == day }) {
-            print("Día de entrenamiento: \(exerciseDay.toDictionary())")
+            let vc = ExerciseDayViewController(exerciseDay: exerciseDay)
+            let navController = UINavigationController(rootViewController: vc)
+            navController.modalPresentationStyle = .fullScreen
+            present(navController, animated: true)
         }
     }
 }

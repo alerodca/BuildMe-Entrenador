@@ -80,10 +80,10 @@ extension DietViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let diet = viewmodel.getDiet(at: indexPath.row)
         if let diet = diet {
-            /*let vc = RoutineDetailViewController(training: workout)
+            let vc = DietDetailViewController(diet: diet)
             let navController = UINavigationController(rootViewController: vc)
             navController.modalPresentationStyle = .fullScreen
-            present(navController, animated: true)*/
+            present(navController, animated: true)
         } else {
             viewmodel.delegate?.showAlert(title: "¡Error!", message: "Hubo un error al navegar a la dieta \(String(describing: diet?.name))", isError: true)
         }

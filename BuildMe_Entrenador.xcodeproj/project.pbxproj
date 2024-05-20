@@ -32,6 +32,8 @@
 		9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */; };
 		9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */; };
 		9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BC12BF279C2003A8269 /* Athlete.swift */; };
+		9F8D70302BF906BC008817CC /* ExerciseDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D702E2BF906BC008817CC /* ExerciseDayViewController.swift */; };
+		9F8D70312BF906BC008817CC /* ExerciseDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D702F2BF906BC008817CC /* ExerciseDayViewController.xib */; };
 		9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */; };
 		9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */; };
 		9F90BD6B2BDFEFCD005AABF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BD6A2BDFEFCD005AABF4 /* Assets.xcassets */; };
@@ -83,6 +85,10 @@
 		9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */; };
 		9FB065322BF7B826008963FF /* RoutineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB065302BF7B826008963FF /* RoutineDetailViewController.swift */; };
 		9FB065332BF7B826008963FF /* RoutineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */; };
+		9FB065372BF7F570008963FF /* DietDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB065352BF7F570008963FF /* DietDetailViewController.swift */; };
+		9FB065382BF7F570008963FF /* DietDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB065362BF7F570008963FF /* DietDetailViewController.xib */; };
+		9FD81BDA2BFBBA3800E23350 /* DietDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD81BD82BFBBA3800E23350 /* DietDayViewController.swift */; };
+		9FD81BDB2BFBBA3800E23350 /* DietDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD81BD92BFBBA3800E23350 /* DietDayViewController.xib */; };
 		9FE89D362BEBD5AB00704A4E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */; };
 		9FE89D3A2BEC0DF700704A4E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D382BEC0DF700704A4E /* ForgotPasswordViewController.swift */; };
 		9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE89D392BEC0DF700704A4E /* ForgotPasswordViewController.xib */; };
@@ -114,6 +120,8 @@
 		9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		9F8B4BC12BF279C2003A8269 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		9F8D702E2BF906BC008817CC /* ExerciseDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDayViewController.swift; sourceTree = "<group>"; };
+		9F8D702F2BF906BC008817CC /* ExerciseDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDayViewController.xib; sourceTree = "<group>"; };
 		9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildMe_Entrenador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F90BD612BDFEFCB005AABF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F90BD632BDFEFCB005AABF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +148,10 @@
 		9F90BDED2BE003B1005AABF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FB065302BF7B826008963FF /* RoutineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailViewController.swift; sourceTree = "<group>"; };
 		9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineDetailViewController.xib; sourceTree = "<group>"; };
+		9FB065352BF7F570008963FF /* DietDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailViewController.swift; sourceTree = "<group>"; };
+		9FB065362BF7F570008963FF /* DietDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailViewController.xib; sourceTree = "<group>"; };
+		9FD81BD82BFBBA3800E23350 /* DietDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDayViewController.swift; sourceTree = "<group>"; };
+		9FD81BD92BFBBA3800E23350 /* DietDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDayViewController.xib; sourceTree = "<group>"; };
 		9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9FE89D382BEC0DF700704A4E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		9FE89D392BEC0DF700704A4E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
@@ -250,6 +262,15 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
+		9F8D702D2BF90699008817CC /* ExerciseDayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F8D702E2BF906BC008817CC /* ExerciseDayViewController.swift */,
+				9F8D702F2BF906BC008817CC /* ExerciseDayViewController.xib */,
+			);
+			path = ExerciseDayViewController;
+			sourceTree = "<group>";
+		};
 		9F90BD552BDFEFCA005AABF4 = {
 			isa = PBXGroup;
 			children = (
@@ -347,17 +368,9 @@
 		9F90BD7B2BDFF039005AABF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9FB0652F2BF7B7FF008963FF /* RoutineDetail */,
-				9F8B4BBC2BF27746003A8269 /* UserDetail */,
+				9FD81BDC2BFBC77E00E23350 /* Auth */,
 				9F6DB85F2BF49795001BAC32 /* Cells */,
-				9FE89D372BEC0DD000704A4E /* ForgotPassword */,
-				9F90BDD22BDFFF9F005AABF4 /* Login */,
-				9F90BDD12BDFFF99005AABF4 /* Signup */,
 				9F90BDD02BDFFF93005AABF4 /* TabBar */,
-				9F90BDCF2BDFFF87005AABF4 /* Users */,
-				9F90BDCE2BDFFF83005AABF4 /* Workout */,
-				9F90BDCD2BDFFF77005AABF4 /* Diet */,
-				9F90BDCC2BDFFF49005AABF4 /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,8 +398,9 @@
 		9F90BDCD2BDFFF77005AABF4 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
-				9F160AB22BF524E700DC4C06 /* DietViewController.swift */,
-				9F160AB32BF524E700DC4C06 /* DietViewController.xib */,
+				9FD81BD72BFBBA0E00E23350 /* DietDayViewController */,
+				9FB065342BF7F552008963FF /* DietDetail */,
+				9FD81BE12BFBC7CA00E23350 /* Diet */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -412,6 +426,10 @@
 		9F90BDD02BDFFF93005AABF4 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				9FD81BE02BFBC7B000E23350 /* Exercise */,
+				9FD81BDE2BFBC78900E23350 /* User */,
+				9F90BDCD2BDFFF77005AABF4 /* Diet */,
+				9F90BDCC2BDFFF49005AABF4 /* Profile */,
 				9F90BDD32BDFFFDE005AABF4 /* TabBarController.swift */,
 			);
 			path = TabBar;
@@ -442,6 +460,62 @@
 				9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */,
 			);
 			path = RoutineDetail;
+			sourceTree = "<group>";
+		};
+		9FB065342BF7F552008963FF /* DietDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9FB065352BF7F570008963FF /* DietDetailViewController.swift */,
+				9FB065362BF7F570008963FF /* DietDetailViewController.xib */,
+			);
+			path = DietDetail;
+			sourceTree = "<group>";
+		};
+		9FD81BD72BFBBA0E00E23350 /* DietDayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9FD81BD82BFBBA3800E23350 /* DietDayViewController.swift */,
+				9FD81BD92BFBBA3800E23350 /* DietDayViewController.xib */,
+			);
+			path = DietDayViewController;
+			sourceTree = "<group>";
+		};
+		9FD81BDC2BFBC77E00E23350 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				9FE89D372BEC0DD000704A4E /* ForgotPassword */,
+				9F90BDD22BDFFF9F005AABF4 /* Login */,
+				9F90BDD12BDFFF99005AABF4 /* Signup */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		9FD81BDE2BFBC78900E23350 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B4BBC2BF27746003A8269 /* UserDetail */,
+				9F90BDCF2BDFFF87005AABF4 /* Users */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		9FD81BE02BFBC7B000E23350 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				9F90BDCE2BDFFF83005AABF4 /* Workout */,
+				9F8D702D2BF90699008817CC /* ExerciseDayViewController */,
+				9FB0652F2BF7B7FF008963FF /* RoutineDetail */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		9FD81BE12BFBC7CA00E23350 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				9F160AB22BF524E700DC4C06 /* DietViewController.swift */,
+				9F160AB32BF524E700DC4C06 /* DietViewController.xib */,
+			);
+			path = Diet;
 			sourceTree = "<group>";
 		};
 		9FE89D342BEBD56C00704A4E /* Custom UI Objects */ = {
@@ -563,7 +637,10 @@
 				9F160AB12BF524CC00DC4C06 /* WorkoutViewController.xib in Resources */,
 				9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */,
 				9F6DB86D2BF4B481001BAC32 /* PrincipalTableViewCell.xib in Resources */,
+				9F8D70312BF906BC008817CC /* ExerciseDayViewController.xib in Resources */,
 				9F90BD6B2BDFEFCD005AABF4 /* Assets.xcassets in Resources */,
+				9FB065382BF7F570008963FF /* DietDetailViewController.xib in Resources */,
+				9FD81BDB2BFBBA3800E23350 /* DietDayViewController.xib in Resources */,
 				9F90BDDC2BE00013005AABF4 /* SignupViewController.xib in Resources */,
 				9F90BDD82BE00007005AABF4 /* LoginViewController.xib in Resources */,
 			);
@@ -581,6 +658,7 @@
 				9FB065322BF7B826008963FF /* RoutineDetailViewController.swift in Sources */,
 				9F11449C2BF67500008D650C /* DietViewModel.swift in Sources */,
 				9F15CB012BED247A00626A92 /* UsersViewModel.swift in Sources */,
+				9FD81BDA2BFBBA3800E23350 /* DietDayViewController.swift in Sources */,
 				9F11449A2BF674F6008D650C /* WorkoutViewModel.swift in Sources */,
 				9F90BDBD2BDFFDA8005AABF4 /* ProfileViewModel.swift in Sources */,
 				9FE89D3A2BEC0DF700704A4E /* ForgotPasswordViewController.swift in Sources */,
@@ -593,6 +671,7 @@
 				9F00F5A22BF5DAA400A2CE23 /* StregthRoutine.swift in Sources */,
 				9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */,
 				9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */,
+				9FB065372BF7F570008963FF /* DietDetailViewController.swift in Sources */,
 				9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */,
 				9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */,
 				9F160AB02BF524CC00DC4C06 /* WorkoutViewController.swift in Sources */,
@@ -601,6 +680,7 @@
 				9F90BDDB2BE00013005AABF4 /* SignupViewController.swift in Sources */,
 				9F23466E2BF52D04005FAB13 /* Enums.swift in Sources */,
 				9F2346752BF52F80005FAB13 /* Training.swift in Sources */,
+				9F8D70302BF906BC008817CC /* ExerciseDayViewController.swift in Sources */,
 				9F90BDDF2BE00025005AABF4 /* UsersViewController.swift in Sources */,
 				9F02647D2BF5FA7200B39F9F /* MediterranianDiet.swift in Sources */,
 				9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */,

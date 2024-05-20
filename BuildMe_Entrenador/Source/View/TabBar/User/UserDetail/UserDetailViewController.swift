@@ -43,6 +43,10 @@ class UserDetailViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func showCompleted() {
+        print("Mostrando días completados...")
+    }
+    
     // MARK: - Private Funcs
     private func initialConfigure() {
         view.applyBlueRedGradient()
@@ -54,6 +58,14 @@ class UserDetailViewController: UIViewController {
             [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white],
             for: .normal)
         navigationItem.leftBarButtonItem = backButton
+        
+        let rightBackImage = UIImage(systemName: "checkmark.circle")
+        let checkmarkButton = UIBarButtonItem(image: rightBackImage, style: .plain, target: self, action: #selector(showCompleted))
+        checkmarkButton.tintColor = .white
+        checkmarkButton.setTitleTextAttributes(
+            [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white],
+            for: .normal)
+        navigationItem.rightBarButtonItem = checkmarkButton
         
         backgroundView.layer.cornerRadius = 15
         backgroundView.layer.masksToBounds = true
