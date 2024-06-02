@@ -37,6 +37,9 @@
                                     <buttonConfiguration key="configuration" style="filled" title="Asignar Rutina">
                                         <color key="baseBackgroundColor" systemColor="systemCyanColor"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="assignedRoutine:" destination="-1" eventType="touchUpInside" id="ukb-Oj-Jcw"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pff-Xz-P4b">
                                     <rect key="frame" x="181.66666666666663" y="0.0" width="166.33333333333337" height="50"/>
@@ -44,6 +47,9 @@
                                     <buttonConfiguration key="configuration" style="filled" title="Asignar Dieta">
                                         <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="assignedDiet:" destination="-1" eventType="touchUpInside" id="aix-Cs-wSO"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>

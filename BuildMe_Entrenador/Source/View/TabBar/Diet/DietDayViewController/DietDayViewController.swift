@@ -157,7 +157,9 @@ extension DietDayViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         
-        // Manejar la selección de la fila si es necesario, por ejemplo, navegar a una nueva vista con más detalles de la receta
-        print("Selected recipe: \(selectedRecipe.name)")
+        let vc = FoodDetailViewController(recipe: selectedRecipe)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
 }

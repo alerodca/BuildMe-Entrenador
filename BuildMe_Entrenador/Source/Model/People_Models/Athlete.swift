@@ -24,8 +24,10 @@ class Athlete: Decodable {
     let profileImageView: String
     var isTrainer = false
     let uid: String
+    var routine: Training?
+    var diet: Diet?
 
-    init(name: String, gender: String, dateBirth: String, email: String, phone: String, username: String, password: String, trainingGoal: String, availableTime: String, location: String, clinicHistory: String, injuriesHistory: String, physicCondition: String, profileImageView: String, uid: String) {
+    init(name: String, gender: String, dateBirth: String, email: String, phone: String, username: String, password: String, trainingGoal: String, availableTime: String, location: String, clinicHistory: String, injuriesHistory: String, physicCondition: String, profileImageView: String, uid: String, routine: Training?, diet: Diet?) {
         self.name = name
         self.gender = gender
         self.dateBirth = dateBirth
@@ -41,6 +43,8 @@ class Athlete: Decodable {
         self.physicCondition = physicCondition
         self.profileImageView = profileImageView
         self.uid = uid
+        self.routine = routine
+        self.diet = diet
     }
 
     func toDictionary() -> [String: Any] {
@@ -60,7 +64,9 @@ class Athlete: Decodable {
             "physicCondition": physicCondition,
             "profileImageView": profileImageView,
             "isTrainer": isTrainer,
-            "uid": uid
+            "uid": uid,
+            "routine": routine?.toDictionary(),
+            "diet": diet?.toDictionary()
         ]
     }
 }

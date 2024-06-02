@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import FirebaseDatabase
 
 class DietViewController: UIViewController {
 
@@ -23,7 +24,6 @@ class DietViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initialConfigure()
     }
     

@@ -27,6 +27,10 @@
 		9F23467B2BF536CC005FAB13 /* DietDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23467A2BF536CC005FAB13 /* DietDay.swift */; };
 		9F23467D2BF5375D005FAB13 /* Diet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23467C2BF5375D005FAB13 /* Diet.swift */; };
 		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
+		9F54980B2BFCB8E300CC8F96 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5498092BFCB8E300CC8F96 /* ExerciseDetailViewController.swift */; };
+		9F54980C2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */; };
+		9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */; };
+		9F5498102BFCB8F700CC8F96 /* FoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */; };
 		9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */; };
 		9F6DB86D2BF4B481001BAC32 /* PrincipalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */; };
 		9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */; };
@@ -115,6 +119,10 @@
 		9F2346782BF535FC005FAB13 /* NutritionalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionalValues.swift; sourceTree = "<group>"; };
 		9F23467A2BF536CC005FAB13 /* DietDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDay.swift; sourceTree = "<group>"; };
 		9F23467C2BF5375D005FAB13 /* Diet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diet.swift; sourceTree = "<group>"; };
+		9F5498092BFCB8E300CC8F96 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
+		9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailViewController.xib; sourceTree = "<group>"; };
+		9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailViewController.xib; sourceTree = "<group>"; };
 		9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
 		9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrincipalTableViewCell.xib; sourceTree = "<group>"; };
 		9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +242,24 @@
 				9F23467C2BF5375D005FAB13 /* Diet.swift */,
 			);
 			path = Diets_Models;
+			sourceTree = "<group>";
+		};
+		9F5498072BFCB88A00CC8F96 /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F5498092BFCB8E300CC8F96 /* ExerciseDetailViewController.swift */,
+				9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */,
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		9F5498082BFCB8AE00CC8F96 /* FoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */,
+				9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */,
+			);
+			path = FoodDetail;
 			sourceTree = "<group>";
 		};
 		9F6DB85F2BF49795001BAC32 /* Cells */ = {
@@ -398,9 +424,10 @@
 		9F90BDCD2BDFFF77005AABF4 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
-				9FD81BD72BFBBA0E00E23350 /* DietDayViewController */,
-				9FB065342BF7F552008963FF /* DietDetail */,
 				9FD81BE12BFBC7CA00E23350 /* Diet */,
+				9FB065342BF7F552008963FF /* DietDetail */,
+				9FD81BD72BFBBA0E00E23350 /* DietDayViewController */,
+				9F5498082BFCB8AE00CC8F96 /* FoodDetail */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -426,8 +453,8 @@
 		9F90BDD02BDFFF93005AABF4 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				9FD81BE02BFBC7B000E23350 /* Exercise */,
 				9FD81BDE2BFBC78900E23350 /* User */,
+				9FD81BE02BFBC7B000E23350 /* Exercise */,
 				9F90BDCD2BDFFF77005AABF4 /* Diet */,
 				9F90BDCC2BDFFF49005AABF4 /* Profile */,
 				9F90BDD32BDFFFDE005AABF4 /* TabBarController.swift */,
@@ -493,8 +520,8 @@
 		9FD81BDE2BFBC78900E23350 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				9F8B4BBC2BF27746003A8269 /* UserDetail */,
 				9F90BDCF2BDFFF87005AABF4 /* Users */,
+				9F8B4BBC2BF27746003A8269 /* UserDetail */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -503,8 +530,9 @@
 			isa = PBXGroup;
 			children = (
 				9F90BDCE2BDFFF83005AABF4 /* Workout */,
-				9F8D702D2BF90699008817CC /* ExerciseDayViewController */,
 				9FB0652F2BF7B7FF008963FF /* RoutineDetail */,
+				9F8D702D2BF90699008817CC /* ExerciseDayViewController */,
+				9F5498072BFCB88A00CC8F96 /* ExerciseDetail */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -630,6 +658,7 @@
 				9FB065332BF7B826008963FF /* RoutineDetailViewController.xib in Resources */,
 				9F90BDE02BE00025005AABF4 /* UsersViewController.xib in Resources */,
 				9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */,
+				9F5498102BFCB8F700CC8F96 /* FoodDetailViewController.xib in Resources */,
 				9F90BDEE2BE003B1005AABF4 /* GoogleService-Info.plist in Resources */,
 				9F90BDEC2BE00048005AABF4 /* ProfileViewController.xib in Resources */,
 				9F160AB52BF524E700DC4C06 /* DietViewController.xib in Resources */,
@@ -643,6 +672,7 @@
 				9FD81BDB2BFBBA3800E23350 /* DietDayViewController.xib in Resources */,
 				9F90BDDC2BE00013005AABF4 /* SignupViewController.xib in Resources */,
 				9F90BDD82BE00007005AABF4 /* LoginViewController.xib in Resources */,
+				9F54980C2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,11 +712,13 @@
 				9F2346752BF52F80005FAB13 /* Training.swift in Sources */,
 				9F8D70302BF906BC008817CC /* ExerciseDayViewController.swift in Sources */,
 				9F90BDDF2BE00025005AABF4 /* UsersViewController.swift in Sources */,
+				9F54980B2BFCB8E300CC8F96 /* ExerciseDetailViewController.swift in Sources */,
 				9F02647D2BF5FA7200B39F9F /* MediterranianDiet.swift in Sources */,
 				9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */,
 				9F90BDD42BDFFFDE005AABF4 /* TabBarController.swift in Sources */,
 				9F90BDC32BDFFE29005AABF4 /* Constants.swift in Sources */,
 				9F2346732BF52DBE005FAB13 /* ExerciseDay.swift in Sources */,
+				9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */,
 				9F90BDCB2BDFFEFE005AABF4 /* Extension+UIView.swift in Sources */,
 				9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */,
 				9F2346792BF535FC005FAB13 /* NutritionalValues.swift in Sources */,

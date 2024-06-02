@@ -91,7 +91,9 @@ extension ExerciseDayViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedExercise = exerciseDay.exercises[indexPath.row]
-        // Manejar la selección de la fila si es necesario, por ejemplo, navegar a una nueva vista con más detalles del ejercicio
-        print("Selected exercise: \(selectedExercise.name)")
+        let vc = ExerciseDetailViewController(exercise: selectedExercise)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
 }
