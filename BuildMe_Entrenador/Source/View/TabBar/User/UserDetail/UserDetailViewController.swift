@@ -19,6 +19,8 @@ class UserDetailViewController: UIViewController {
     @IBOutlet var dietAssignedTextView: UITextView!
     @IBOutlet var routineAssignedTextView: UITextView!
     @IBOutlet var personalDataTextView: UITextView!
+    @IBOutlet var assignedRoutineButton: UIButton!
+    @IBOutlet var asignedDietButton: UIButton!
     
     // MARK: - Variables
     let athlete: Athlete
@@ -37,6 +39,19 @@ class UserDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfigure()
+        
+        if let routine = athlete.routine {
+            assignedRoutineButton.setTitle("Eliminar Rutina", for: .normal)
+        } else {
+            assignedRoutineButton.setTitle("Asignar Rutina", for: .normal)
+        }
+        
+        // Verificar si hay dieta asignada
+        if let diet = athlete.diet {
+            asignedDietButton.setTitle("Eliminar Dieta", for: .normal)
+        } else {
+            asignedDietButton.setTitle("Asignar Dieta", for: .normal)
+        }
     }
     
     // MARK: - Actions & Selectors
@@ -49,14 +64,49 @@ class UserDetailViewController: UIViewController {
     }
     
     @IBAction func assignedRoutine(_ sender: UIButton) {
-        fetchDataAndShowAlert(for: Constants.routineChild, isRoutine: true)
+        if let routine = athlete.routine {
+            // Eliminar rutina asignada
+            athlete.routine = nil
+            saveAthleteData()
+            assignedRoutineButton.setTitle("Asignar Rutina", for: .normal)
+            updateAssignedTextView(assignedTextView: routineAssignedTextView, text: "", isRoutine: true)
+            showJProgressHUD(title: "Rutina Eliminada", message: "Se ha eliminado la rutina que tenía asignada", isError: false)
+        } else {
+            // Asignar rutina
+            fetchDataAndShowAlert(for: Constants.routineChild, isRoutine: true)
+            assignedRoutineButton.setTitle("Eliminar Rutina", for: .normal)
+        }
     }
-    
+
     @IBAction func assignedDiet(_ sender: UIButton) {
-        fetchDataAndShowAlert(for: Constants.dietChild, isRoutine: false)
+        if let diet = athlete.diet {
+            // Eliminar dieta asignada
+            athlete.diet = nil
+            saveAthleteData()
+            asignedDietButton.setTitle("Asignar Dieta", for: .normal)
+            updateAssignedTextView(assignedTextView: dietAssignedTextView, text: "", isRoutine: false)
+            showJProgressHUD(title: "Dieta Eliminada", message: "Se ha eliminado la dieta que tenía asignada", isError: false)
+        } else {
+            // Asignar dieta
+            fetchDataAndShowAlert(for: Constants.dietChild, isRoutine: false)
+            asignedDietButton.setTitle("Eliminar Dieta", for: .normal)
+        }
     }
     
     // MARK: - Private Funcs
+    private func showJProgressHUD(title: String, message: String, isError: Bool) {
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
+            JGProgressHUDSuccessIndicatorView()
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 3, animated: true)
+        }
+    }
+    
     private func fetchDataAndShowAlert(for node: String, isRoutine: Bool) {
         database.child(node).observeSingleEvent(of: .value) { snapshot in
             var options: [Any] = []
@@ -99,40 +149,51 @@ class UserDetailViewController: UIViewController {
                 alertController.addAction(action)
             }
         }
-        alertController.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Cancelar", style: .cancel) { _ in
+            if isRoutine {
+                self.assignedRoutineButton.setTitle("Asignar Rutina", for: .normal)
+            } else {
+                self.asignedDietButton.setTitle("Asignar Dieta", for: .normal)
+            }
+        })
         present(alertController, animated: true)
     }
-    
+
     private func assignDiet(_ diet: Diet) {
         athlete.diet = diet
         saveAthleteData()
-        let boldAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 15)
-        ]
-        let attributedStringDA = NSMutableAttributedString(string: "Dieta Asignada: ", attributes: boldAttributes)
-        attributedStringDA.append(NSAttributedString(string: diet.name))
-        dietAssignedTextView.attributedText = attributedStringDA
+        showJProgressHUD(title: "Dieta Asignada", message: "Se le ha asignado una nueva dieta", isError: false)
+        updateAssignedTextView(assignedTextView: dietAssignedTextView, text: diet.name, isRoutine: false)
     }
 
     private func assignTraining(_ training: Training) {
         athlete.routine = training
         saveAthleteData()
+        showJProgressHUD(title: "Rutina Asignada", message: "Se le ha asignado una nueva rutina", isError: false)
+        updateAssignedTextView(assignedTextView: routineAssignedTextView, text: training.name, isRoutine: true)
+    }
+
+    private func updateAssignedTextView(assignedTextView: UITextView, text: String, isRoutine: Bool) {
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15)
         ]
-        let attributedStringRA = NSMutableAttributedString(string: "Rutina Asignada: ", attributes: boldAttributes)
-        attributedStringRA.append(NSAttributedString(string: training.name))
-        routineAssignedTextView.attributedText = attributedStringRA
+        let attributedString = NSMutableAttributedString(string: isRoutine ? "Rutina Asignada: " : "Dieta Asignada: ", attributes: boldAttributes)
+        if text.isEmpty {
+            attributedString.append(NSAttributedString(string: "Sin \(isRoutine ? "rutina" : "dieta") asignada"))
+        } else {
+            attributedString.append(NSAttributedString(string: text))
+        }
+        assignedTextView.attributedText = attributedString
     }
 
-    
+
     private func saveAthleteData() {
         database.child(Constants.athleteChild).child(athlete.uid).setValue(athlete.toDictionary())
     }
-    
+
     private func initialConfigure() {
         view.applyBlueRedGradient()
-
+        
         // Configure back button
         let backImage = UIImage(systemName: "arrow.backward")
         let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(dismissSelf))
@@ -141,7 +202,7 @@ class UserDetailViewController: UIViewController {
             [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white],
             for: .normal)
         navigationItem.leftBarButtonItem = backButton
-
+        
         // Configure checkmark button
         let rightBackImage = UIImage(systemName: "checkmark.circle")
         let checkmarkButton = UIBarButtonItem(image: rightBackImage, style: .plain, target: self, action: #selector(showCompleted))
@@ -150,32 +211,32 @@ class UserDetailViewController: UIViewController {
             [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white],
             for: .normal)
         navigationItem.rightBarButtonItem = checkmarkButton
-
+        
         backgroundView.layer.cornerRadius = 15
         backgroundView.layer.masksToBounds = true
-
+        
         profileImageView.loadImage(from: athlete.profileImageView)
         profileImageView.layer.cornerRadius = 8.0
         profileImageView.clipsToBounds = true
-
+        
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15)
         ]
-
+        
         // Configure injury history text view
         let attributedString = NSMutableAttributedString(string: "Historial de Lesiones: ", attributes: boldAttributes)
         attributedString.append(NSAttributedString(string: athlete.injuriesHistory))
         injuryHistoryTextView.attributedText = attributedString
         injuryHistoryTextView.isEditable = false
         injuryHistoryTextView.isScrollEnabled = true
-
+        
         // Configure clinic history text view
         let attributedStringCH = NSMutableAttributedString(string: "Historial Clínico: ", attributes: boldAttributes)
         attributedStringCH.append(NSAttributedString(string: athlete.clinicHistory))
         clinicHistoryTextView.attributedText = attributedStringCH
         clinicHistoryTextView.isEditable = false
         clinicHistoryTextView.isScrollEnabled = true
-
+        
         // Configure diet assigned text view
         let attributedStringDA = NSMutableAttributedString(string: "Dieta Asignada: ", attributes: boldAttributes)
         if let diet = athlete.diet {
@@ -186,7 +247,7 @@ class UserDetailViewController: UIViewController {
         dietAssignedTextView.attributedText = attributedStringDA
         dietAssignedTextView.isEditable = false
         dietAssignedTextView.isScrollEnabled = true
-
+        
         // Configure routine assigned text view
         let attributedStringRA = NSMutableAttributedString(string: "Rutina Asignada: ", attributes: boldAttributes)
         if let routine = athlete.routine {
@@ -197,7 +258,7 @@ class UserDetailViewController: UIViewController {
         routineAssignedTextView.attributedText = attributedStringRA
         routineAssignedTextView.isEditable = false
         routineAssignedTextView.isScrollEnabled = true
-
+        
         // Configure personal data text view
         personalDataTextView.layer.borderWidth = 1.0
         personalDataTextView.layer.borderColor = UIColor.black.cgColor
