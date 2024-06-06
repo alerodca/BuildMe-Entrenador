@@ -76,7 +76,6 @@
                     <state key="normal" title="Olvidé mi contraseña"/>
                     <connections>
                         <action selector="navigateToForgotPassword:" destination="-1" eventType="touchUpInside" id="a7Q-dG-zf4"/>
-                        <action selector="resetPassword:" destination="-1" eventType="touchUpInside" id="7kh-c8-DhI"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-w3-gP5">

@@ -27,43 +27,49 @@ class LoginViewModel {
     // MARK: - Functions
     func login(email: String?, password: String?) {
         delegate?.showIndicator()
+
         guard let email = email, !email.isEmpty,
               let password = password, !password.isEmpty else {
             delegate?.hideIndicator()
             delegate?.showAlert(title: "Error", message: "Por favor ingresa un email y una contraseña válidos", isError: true)
             return
         }
-        
-        let databaseRef = Database.database().reference().child(Constants.trainerChild)
-        databaseRef.observeSingleEvent(of: .value) { (snapshot) in
-            guard snapshot.exists() else {
-                self.delegate?.hideIndicator()
+
+        // Check user type (athlete or trainer) using Firebase Realtime Database
+        let databaseRef = Database.database().reference().child(Constants.trainerChild) // Assuming Constants.trainerChild points to the trainer node
+
+        databaseRef.observeSingleEvent(of: .value) { [weak self] snapshot in
+            guard let self = self else { return }
+            self.delegate?.hideIndicator() // Hide indicator after any Database operation
+
+            if !snapshot.exists() {
                 self.delegate?.showAlert(title: "Error", message: "No se encontraron datos de usuarios en la base de datos", isError: true)
                 return
             }
-            var isUserRegistered = false
+
+            var isTrainer = false
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                    let userData = childSnapshot.value as? [String: Any],
-                   let userEmail = userData["email"] as? String {
-                    if userEmail == email {
-                        isUserRegistered = true
-                        break
-                    }
+                   let userEmail = userData["email"] as? String,
+                   userEmail == email {
+                    isTrainer = true
+                    break
                 }
             }
-            if isUserRegistered {
-                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+
+            if isTrainer {
+                // Attempt authentication if user is a trainer
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                    guard let self = self else { return }
+
                     if let error = error {
-                        self.delegate?.hideIndicator()
                         self.showError(error: error as! AuthErrorCode)
                     } else {
-                        // Autenticación exitosa
-                        self.delegate?.authComplete()
+                        self.delegate?.authComplete() // Successful login as trainer
                     }
                 }
             } else {
-                self.delegate?.hideIndicator()
                 self.delegate?.showAlert(title: "Error", message: "Para acceder a la app debe ser un Entrenador", isError: true)
             }
         }

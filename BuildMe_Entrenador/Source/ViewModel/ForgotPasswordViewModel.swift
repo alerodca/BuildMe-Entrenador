@@ -23,24 +23,31 @@ class ForgotPasswordViewModel {
     }
     
     func sendEmail(email: String) {
-        // Verificar si el usuario está registrado
-        Auth.auth().fetchSignInMethods(forEmail: email) { signInMethods, error in
-            if let error = error {
-                self.delegate?.showAlert(title: "Error", message: "Error al verificar si el usuario está registrado", isError: true)
-                return
-            }
+        let ref = Database.database().reference().child("Users/Trainer")
+        
+        ref.observeSingleEvent(of: .value) { snapshot in
+            var userFound = false
             
-            if let signInMethods = signInMethods, signInMethods.isEmpty {
-                self.delegate?.showAlert(title: "Error", message: "El usuario no está registrado en la aplicación.", isError: true)
-            } else {
-                Auth.auth().sendPasswordReset(withEmail: email) { error in
-                    if let error = error {
-                        self.delegate?.showAlert(title: "Error", message: "Error al enviar el correo electrónico de restablecimiento de contraseña: \(error.localizedDescription)", isError: true)
-                    } else {
-                        // Solo mostrar el mensaje de éxito si el correo electrónico se envió correctamente
-                        self.delegate?.showAlert(title: "Éxito", message: "Se ha enviado un correo para restablecer la contraseña", isError: false)
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let userDict = childSnapshot.value as? [String: Any],
+                   let userEmail = userDict["email"] as? String, userEmail == email {
+                    
+                    userFound = true
+                    
+                    // Enviar el correo electrónico de restablecimiento de contraseña
+                    Auth.auth().sendPasswordReset(withEmail: email) { error in
+                        if let error = error {
+                            self.delegate?.showAlert(title: "Error", message: "Error al enviar el correo electrónico de restablecimiento de contraseña: \(error.localizedDescription)", isError: true)
+                        } else {
+                            self.delegate?.showAlert(title: "Éxito", message: "Se ha enviado un correo para restablecer la contraseña", isError: false)
+                        }
                     }
                 }
+            }
+            
+            if !userFound {
+                self.delegate?.showAlert(title: "Error", message: "Este correo no aparece registrado.", isError: true)
             }
         }
     }

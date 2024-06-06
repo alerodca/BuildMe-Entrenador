@@ -60,7 +60,10 @@ class UserDetailViewController: UIViewController {
     }
     
     @objc func showCompleted() {
-        print("Mostrando días completados...")
+        let vc = InfoTaskViewController(uid: athlete.uid)
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
     
     @IBAction func assignedRoutine(_ sender: UIButton) {

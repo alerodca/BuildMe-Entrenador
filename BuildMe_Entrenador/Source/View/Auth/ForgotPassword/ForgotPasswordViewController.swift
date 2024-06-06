@@ -28,7 +28,7 @@ class ForgotPasswordViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func rememberPassword(_ sender: UIButton) {
-        if let email = emailTextField.text {
+        if let email = emailTextField.text, !email.isEmpty {
             viewmodel.sendEmail(email: email)
         } else {
             showAlert(title: "Error", message: "Debe proporcionar un correo válido", isError: true)

@@ -31,8 +31,11 @@
 		9F54980C2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */; };
 		9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */; };
 		9F5498102BFCB8F700CC8F96 /* FoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */; };
+		9F5A2C622C118352008D59E8 /* BuildMe_EntrenadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */; };
+		9F5A2C692C11839C008D59E8 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */; };
 		9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */; };
 		9F6DB86D2BF4B481001BAC32 /* PrincipalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */; };
+		9F8AAC0D2C0F284500A0F005 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AAC0C2C0F284500A0F005 /* Extension+UIImage.swift */; };
 		9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */; };
 		9F8B4BC02BF27788003A8269 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */; };
 		9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B4BC12BF279C2003A8269 /* Athlete.swift */; };
@@ -91,6 +94,12 @@
 		9FB065332BF7B826008963FF /* RoutineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */; };
 		9FB065372BF7F570008963FF /* DietDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB065352BF7F570008963FF /* DietDetailViewController.swift */; };
 		9FB065382BF7F570008963FF /* DietDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB065362BF7F570008963FF /* DietDetailViewController.xib */; };
+		9FB5BA492C0DC8670004808B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5BA482C0DC8670004808B /* CustomTableViewCell.swift */; };
+		9FB5BA4D2C0DC8B90004808B /* InfoTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5BA4B2C0DC8B90004808B /* InfoTaskViewController.swift */; };
+		9FB5BA4E2C0DC8B90004808B /* InfoTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FB5BA4C2C0DC8B90004808B /* InfoTaskViewController.xib */; };
+		9FB5BA502C0DCA3C0004808B /* TaskCompleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5BA4F2C0DCA3C0004808B /* TaskCompleted.swift */; };
+		9FB5BA522C0DCB2D0004808B /* InfoTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5BA512C0DCB2D0004808B /* InfoTaskViewModel.swift */; };
+		9FB5BA552C0DD3A40004808B /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB5BA542C0DD3A40004808B /* PopupViewController.swift */; };
 		9FD81BDA2BFBBA3800E23350 /* DietDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD81BD82BFBBA3800E23350 /* DietDayViewController.swift */; };
 		9FD81BDB2BFBBA3800E23350 /* DietDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FD81BD92BFBBA3800E23350 /* DietDayViewController.xib */; };
 		9FE89D362BEBD5AB00704A4E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */; };
@@ -98,6 +107,16 @@
 		9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE89D392BEC0DF700704A4E /* ForgotPasswordViewController.xib */; };
 		9FE89D3D2BEC105F00704A4E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE89D3C2BEC105F00704A4E /* ForgotPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F5A2C632C118352008D59E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F90BD562BDFEFCA005AABF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F90BD5D2BDFEFCB005AABF4;
+			remoteInfo = BuildMe_Entrenador;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9F00F5A12BF5DAA400A2CE23 /* StregthRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StregthRoutine.swift; sourceTree = "<group>"; };
@@ -123,8 +142,12 @@
 		9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailViewController.xib; sourceTree = "<group>"; };
 		9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
 		9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailViewController.xib; sourceTree = "<group>"; };
+		9F5A2C5F2C118351008D59E8 /* BuildMe_EntrenadorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildMe_EntrenadorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildMe_EntrenadorTests.swift; sourceTree = "<group>"; };
+		9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
 		9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrincipalTableViewCell.xib; sourceTree = "<group>"; };
+		9F8AAC0C2C0F284500A0F005 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		9F8B4BBD2BF27788003A8269 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		9F8B4BBE2BF27788003A8269 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		9F8B4BC12BF279C2003A8269 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
@@ -158,6 +181,12 @@
 		9FB065312BF7B826008963FF /* RoutineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoutineDetailViewController.xib; sourceTree = "<group>"; };
 		9FB065352BF7F570008963FF /* DietDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailViewController.swift; sourceTree = "<group>"; };
 		9FB065362BF7F570008963FF /* DietDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDetailViewController.xib; sourceTree = "<group>"; };
+		9FB5BA482C0DC8670004808B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		9FB5BA4B2C0DC8B90004808B /* InfoTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTaskViewController.swift; sourceTree = "<group>"; };
+		9FB5BA4C2C0DC8B90004808B /* InfoTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTaskViewController.xib; sourceTree = "<group>"; };
+		9FB5BA4F2C0DCA3C0004808B /* TaskCompleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCompleted.swift; sourceTree = "<group>"; };
+		9FB5BA512C0DCB2D0004808B /* InfoTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTaskViewModel.swift; sourceTree = "<group>"; };
+		9FB5BA542C0DD3A40004808B /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		9FD81BD82BFBBA3800E23350 /* DietDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDayViewController.swift; sourceTree = "<group>"; };
 		9FD81BD92BFBBA3800E23350 /* DietDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DietDayViewController.xib; sourceTree = "<group>"; };
 		9FE89D352BEBD5AB00704A4E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -167,6 +196,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F5A2C5C2C118351008D59E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F90BD5B2BDFEFCB005AABF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,10 +298,20 @@
 			path = FoodDetail;
 			sourceTree = "<group>";
 		};
+		9F5A2C602C118352008D59E8 /* BuildMe_EntrenadorTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */,
+				9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */,
+			);
+			path = BuildMe_EntrenadorTests;
+			sourceTree = "<group>";
+		};
 		9F6DB85F2BF49795001BAC32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				9F6DB8692BF4B43B001BAC32 /* PrincipalListCell */,
+				9FB5BA482C0DC8670004808B /* CustomTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -301,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				9F90BD602BDFEFCB005AABF4 /* BuildMe_Entrenador */,
+				9F5A2C602C118352008D59E8 /* BuildMe_EntrenadorTests */,
 				9F90BD5F2BDFEFCB005AABF4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -309,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				9F90BD5E2BDFEFCB005AABF4 /* BuildMe_Entrenador.app */,
+				9F5A2C5F2C118351008D59E8 /* BuildMe_EntrenadorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -365,6 +413,7 @@
 				9F90BDC82BDFFED9005AABF4 /* Extension+UITextfield.swift */,
 				9F90BDCA2BDFFEFE005AABF4 /* Extension+UIView.swift */,
 				9F0F08602BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift */,
+				9F8AAC0C2C0F284500A0F005 /* Extension+UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +436,7 @@
 				9F15CB002BED247A00626A92 /* UsersViewModel.swift */,
 				9F1144992BF674F6008D650C /* WorkoutViewModel.swift */,
 				9F11449B2BF67500008D650C /* DietViewModel.swift */,
+				9FB5BA512C0DCB2D0004808B /* InfoTaskViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -408,6 +458,7 @@
 				9F2346702BF52D4B005FAB13 /* Workout_Model */,
 				9F23466F2BF52D41005FAB13 /* People_Models */,
 				9F23466D2BF52D04005FAB13 /* Enums.swift */,
+				9FB5BA4F2C0DCA3C0004808B /* TaskCompleted.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,6 +549,23 @@
 			path = DietDetail;
 			sourceTree = "<group>";
 		};
+		9FB5BA4A2C0DC8A50004808B /* InfoTask */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5BA4B2C0DC8B90004808B /* InfoTaskViewController.swift */,
+				9FB5BA4C2C0DC8B90004808B /* InfoTaskViewController.xib */,
+			);
+			path = InfoTask;
+			sourceTree = "<group>";
+		};
+		9FB5BA532C0DD3850004808B /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				9FB5BA542C0DD3A40004808B /* PopupViewController.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		9FD81BD72BFBBA0E00E23350 /* DietDayViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +590,8 @@
 			children = (
 				9F90BDCF2BDFFF87005AABF4 /* Users */,
 				9F8B4BBC2BF27746003A8269 /* UserDetail */,
+				9FB5BA4A2C0DC8A50004808B /* InfoTask */,
+				9FB5BA532C0DD3850004808B /* PopUp */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -566,6 +636,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F5A2C5E2C118351008D59E8 /* BuildMe_EntrenadorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F5A2C672C118352008D59E8 /* Build configuration list for PBXNativeTarget "BuildMe_EntrenadorTests" */;
+			buildPhases = (
+				9F5A2C5B2C118351008D59E8 /* Sources */,
+				9F5A2C5C2C118351008D59E8 /* Frameworks */,
+				9F5A2C5D2C118351008D59E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F5A2C642C118352008D59E8 /* PBXTargetDependency */,
+			);
+			name = BuildMe_EntrenadorTests;
+			productName = BuildMe_EntrenadorTests;
+			productReference = 9F5A2C5F2C118351008D59E8 /* BuildMe_EntrenadorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9F90BD5D2BDFEFCB005AABF4 /* BuildMe_Entrenador */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F90BD722BDFEFCD005AABF4 /* Build configuration list for PBXNativeTarget "BuildMe_Entrenador" */;
@@ -623,6 +711,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					9F5A2C5E2C118351008D59E8 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 9F90BD5D2BDFEFCB005AABF4;
+					};
 					9F90BD5D2BDFEFCB005AABF4 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -646,11 +738,19 @@
 			projectRoot = "";
 			targets = (
 				9F90BD5D2BDFEFCB005AABF4 /* BuildMe_Entrenador */,
+				9F5A2C5E2C118351008D59E8 /* BuildMe_EntrenadorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F5A2C5D2C118351008D59E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F90BD5C2BDFEFCB005AABF4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -664,6 +764,7 @@
 				9F160AB52BF524E700DC4C06 /* DietViewController.xib in Resources */,
 				9F90BD6E2BDFEFCD005AABF4 /* LaunchScreen.storyboard in Resources */,
 				9F160AB12BF524CC00DC4C06 /* WorkoutViewController.xib in Resources */,
+				9FB5BA4E2C0DC8B90004808B /* InfoTaskViewController.xib in Resources */,
 				9FE89D3B2BEC0DF700704A4E /* ForgotPasswordViewController.xib in Resources */,
 				9F6DB86D2BF4B481001BAC32 /* PrincipalTableViewCell.xib in Resources */,
 				9F8D70312BF906BC008817CC /* ExerciseDayViewController.xib in Resources */,
@@ -679,6 +780,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F5A2C5B2C118351008D59E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F5A2C692C11839C008D59E8 /* LoginViewModelTests.swift in Sources */,
+				9F5A2C622C118352008D59E8 /* BuildMe_EntrenadorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F90BD5A2BDFEFCB005AABF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,11 +806,13 @@
 				9F90BDEB2BE00048005AABF4 /* ProfileViewController.swift in Sources */,
 				9F90BDB92BDFFD4E005AABF4 /* LoginViewModel.swift in Sources */,
 				9FE89D3D2BEC105F00704A4E /* ForgotPasswordViewModel.swift in Sources */,
+				9FB5BA522C0DCB2D0004808B /* InfoTaskViewModel.swift in Sources */,
 				9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */,
 				9F23467B2BF536CC005FAB13 /* DietDay.swift in Sources */,
 				9F00F5A22BF5DAA400A2CE23 /* StregthRoutine.swift in Sources */,
 				9F90BDBB2BDFFD7D005AABF4 /* SignupViewModel.swift in Sources */,
 				9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */,
+				9FB5BA502C0DCA3C0004808B /* TaskCompleted.swift in Sources */,
 				9FB065372BF7F570008963FF /* DietDetailViewController.swift in Sources */,
 				9F90BDC72BDFFEB2005AABF4 /* Extension+UIImageView.swift in Sources */,
 				9F90BD622BDFEFCB005AABF4 /* AppDelegate.swift in Sources */,
@@ -712,6 +824,7 @@
 				9F2346752BF52F80005FAB13 /* Training.swift in Sources */,
 				9F8D70302BF906BC008817CC /* ExerciseDayViewController.swift in Sources */,
 				9F90BDDF2BE00025005AABF4 /* UsersViewController.swift in Sources */,
+				9F8AAC0D2C0F284500A0F005 /* Extension+UIImage.swift in Sources */,
 				9F54980B2BFCB8E300CC8F96 /* ExerciseDetailViewController.swift in Sources */,
 				9F02647D2BF5FA7200B39F9F /* MediterranianDiet.swift in Sources */,
 				9F90BDC92BDFFED9005AABF4 /* Extension+UITextfield.swift in Sources */,
@@ -719,8 +832,11 @@
 				9F90BDC32BDFFE29005AABF4 /* Constants.swift in Sources */,
 				9F2346732BF52DBE005FAB13 /* ExerciseDay.swift in Sources */,
 				9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */,
+				9FB5BA492C0DC8670004808B /* CustomTableViewCell.swift in Sources */,
 				9F90BDCB2BDFFEFE005AABF4 /* Extension+UIView.swift in Sources */,
 				9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */,
+				9FB5BA552C0DD3A40004808B /* PopupViewController.swift in Sources */,
+				9FB5BA4D2C0DC8B90004808B /* InfoTaskViewController.swift in Sources */,
 				9F2346792BF535FC005FAB13 /* NutritionalValues.swift in Sources */,
 				9F23467D2BF5375D005FAB13 /* Diet.swift in Sources */,
 				9F8B4BBF2BF27788003A8269 /* UserDetailViewController.swift in Sources */,
@@ -731,6 +847,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F5A2C642C118352008D59E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F90BD5D2BDFEFCB005AABF4 /* BuildMe_Entrenador */;
+			targetProxy = 9F5A2C632C118352008D59E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9F90BD6C2BDFEFCD005AABF4 /* LaunchScreen.storyboard */ = {
@@ -744,6 +868,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9F5A2C652C118352008D59E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QKXUJ9425T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alerodca.BuildMe-EntrenadorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuildMe_Entrenador.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BuildMe_Entrenador";
+			};
+			name = Debug;
+		};
+		9F5A2C662C118352008D59E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QKXUJ9425T;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alerodca.BuildMe-EntrenadorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuildMe_Entrenador.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BuildMe_Entrenador";
+			};
+			name = Release;
+		};
 		9F90BD702BDFEFCD005AABF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -922,6 +1082,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F5A2C672C118352008D59E8 /* Build configuration list for PBXNativeTarget "BuildMe_EntrenadorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F5A2C652C118352008D59E8 /* Debug */,
+				9F5A2C662C118352008D59E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9F90BD592BDFEFCA005AABF4 /* Build configuration list for PBXProject "BuildMe_Entrenador" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

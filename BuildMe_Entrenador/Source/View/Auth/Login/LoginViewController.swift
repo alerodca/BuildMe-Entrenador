@@ -67,9 +67,6 @@ class LoginViewController: UIViewController {
     @IBAction func navigateToCreateAccount(_ sender: UIButton) {
         viewmodel.navigatoToSignUp()
     }
-    @IBAction func resetPassword(_ sender: UIButton) {
-        navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
-    }
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         
