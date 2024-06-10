@@ -31,8 +31,6 @@
 		9F54980C2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */; };
 		9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */; };
 		9F5498102BFCB8F700CC8F96 /* FoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */; };
-		9F5A2C622C118352008D59E8 /* BuildMe_EntrenadorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */; };
-		9F5A2C692C11839C008D59E8 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */; };
 		9F6DB86C2BF4B481001BAC32 /* PrincipalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */; };
 		9F6DB86D2BF4B481001BAC32 /* PrincipalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */; };
 		9F8AAC0D2C0F284500A0F005 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8AAC0C2C0F284500A0F005 /* Extension+UIImage.swift */; };
@@ -143,8 +141,6 @@
 		9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
 		9F54980E2BFCB8F700CC8F96 /* FoodDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodDetailViewController.xib; sourceTree = "<group>"; };
 		9F5A2C5F2C118351008D59E8 /* BuildMe_EntrenadorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildMe_EntrenadorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildMe_EntrenadorTests.swift; sourceTree = "<group>"; };
-		9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		9F6DB86A2BF4B481001BAC32 /* PrincipalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalTableViewCell.swift; sourceTree = "<group>"; };
 		9F6DB86B2BF4B481001BAC32 /* PrincipalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrincipalTableViewCell.xib; sourceTree = "<group>"; };
 		9F8AAC0C2C0F284500A0F005 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
@@ -298,15 +294,6 @@
 			path = FoodDetail;
 			sourceTree = "<group>";
 		};
-		9F5A2C602C118352008D59E8 /* BuildMe_EntrenadorTests */ = {
-			isa = PBXGroup;
-			children = (
-				9F5A2C612C118352008D59E8 /* BuildMe_EntrenadorTests.swift */,
-				9F5A2C682C11839C008D59E8 /* LoginViewModelTests.swift */,
-			);
-			path = BuildMe_EntrenadorTests;
-			sourceTree = "<group>";
-		};
 		9F6DB85F2BF49795001BAC32 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				9F90BD602BDFEFCB005AABF4 /* BuildMe_Entrenador */,
-				9F5A2C602C118352008D59E8 /* BuildMe_EntrenadorTests */,
 				9F90BD5F2BDFEFCB005AABF4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -784,8 +770,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F5A2C692C11839C008D59E8 /* LoginViewModelTests.swift in Sources */,
-				9F5A2C622C118352008D59E8 /* BuildMe_EntrenadorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

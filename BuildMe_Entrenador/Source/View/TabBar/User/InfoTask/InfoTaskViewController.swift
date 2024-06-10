@@ -15,7 +15,7 @@ class InfoTaskViewController: UIViewController {
     private let uid: String
     private let emptyTasksLabel: UILabel = {
         let label = UILabel()
-        label.text = "Todavía no tienes ninguna tarea completada"
+        label.text = "Todavía no tiene ninguna tarea completada"
         label.textAlignment = .center
         label.numberOfLines = 2
         label.font = UIFont.boldSystemFont(ofSize: 23)
