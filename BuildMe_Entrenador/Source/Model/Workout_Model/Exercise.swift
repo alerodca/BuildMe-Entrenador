@@ -1,5 +1,5 @@
 //
-//  Training.swift
+//  Exercise.swift
 //  BuildMe_Entrenador
 //
 //  Created by Alejandro Rodríguez Cañete on 15/5/24.
