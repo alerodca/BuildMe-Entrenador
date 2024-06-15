@@ -180,15 +180,18 @@ class UserDetailViewController: UIViewController {
         let boldAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 15)
         ]
+        let normalAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 15)
+        ]
+        
         let attributedString = NSMutableAttributedString(string: isRoutine ? "Rutina Asignada: " : "Dieta Asignada: ", attributes: boldAttributes)
         if text.isEmpty {
-            attributedString.append(NSAttributedString(string: "Sin \(isRoutine ? "rutina" : "dieta") asignada"))
+            attributedString.append(NSAttributedString(string: "Sin \(isRoutine ? "rutina" : "dieta") asignada", attributes: normalAttributes))
         } else {
-            attributedString.append(NSAttributedString(string: text))
+            attributedString.append(NSAttributedString(string: text, attributes: normalAttributes))
         }
         assignedTextView.attributedText = attributedString
     }
-
 
     private func saveAthleteData() {
         database.child(Constants.athleteChild).child(athlete.uid).setValue(athlete.toDictionary())
@@ -226,16 +229,20 @@ class UserDetailViewController: UIViewController {
             .font: UIFont.boldSystemFont(ofSize: 15)
         ]
         
+        let normalAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 15)
+        ]
+        
         // Configure injury history text view
         let attributedString = NSMutableAttributedString(string: "Historial de Lesiones: ", attributes: boldAttributes)
-        attributedString.append(NSAttributedString(string: athlete.injuriesHistory))
+        attributedString.append(NSAttributedString(string: athlete.injuriesHistory, attributes: normalAttributes))
         injuryHistoryTextView.attributedText = attributedString
         injuryHistoryTextView.isEditable = false
         injuryHistoryTextView.isScrollEnabled = true
         
         // Configure clinic history text view
         let attributedStringCH = NSMutableAttributedString(string: "Historial Clínico: ", attributes: boldAttributes)
-        attributedStringCH.append(NSAttributedString(string: athlete.clinicHistory))
+        attributedStringCH.append(NSAttributedString(string: athlete.clinicHistory, attributes: normalAttributes))
         clinicHistoryTextView.attributedText = attributedStringCH
         clinicHistoryTextView.isEditable = false
         clinicHistoryTextView.isScrollEnabled = true
@@ -243,9 +250,9 @@ class UserDetailViewController: UIViewController {
         // Configure diet assigned text view
         let attributedStringDA = NSMutableAttributedString(string: "Dieta Asignada: ", attributes: boldAttributes)
         if let diet = athlete.diet {
-            attributedStringDA.append(NSAttributedString(string: diet.name))
+            attributedStringDA.append(NSAttributedString(string: diet.name, attributes: normalAttributes))
         } else {
-            attributedStringDA.append(NSAttributedString(string: "Sin dieta asignada"))
+            attributedStringDA.append(NSAttributedString(string: "Sin dieta asignada", attributes: normalAttributes))
         }
         dietAssignedTextView.attributedText = attributedStringDA
         dietAssignedTextView.isEditable = false
@@ -254,9 +261,9 @@ class UserDetailViewController: UIViewController {
         // Configure routine assigned text view
         let attributedStringRA = NSMutableAttributedString(string: "Rutina Asignada: ", attributes: boldAttributes)
         if let routine = athlete.routine {
-            attributedStringRA.append(NSAttributedString(string: routine.name))
+            attributedStringRA.append(NSAttributedString(string: routine.name, attributes: normalAttributes))
         } else {
-            attributedStringRA.append(NSAttributedString(string: "Sin rutina asignada"))
+            attributedStringRA.append(NSAttributedString(string: "Sin rutina asignada", attributes: normalAttributes))
         }
         routineAssignedTextView.attributedText = attributedStringRA
         routineAssignedTextView.isEditable = false
@@ -268,39 +275,36 @@ class UserDetailViewController: UIViewController {
         personalDataTextView.layer.cornerRadius = 8.0
         personalDataTextView.clipsToBounds = true
         let titleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 18),
+            .font: UIFont.boldSystemFont(ofSize: 15),
             .paragraphStyle: NSMutableParagraphStyle().centered()
         ]
         let titleString = NSAttributedString(string: "Datos Personales\n", attributes: titleAttributes)
-        let boldAttributesPD: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 13)
-        ]
+        
         let attributedStringPD = NSMutableAttributedString()
         attributedStringPD.append(titleString)
         attributedStringPD.append(NSAttributedString(string: "\nNombre: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.name)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.name)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Género: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.gender)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.gender)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Email: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.email)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.email)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Nombre de Usuario: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.username)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.username)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Número de Teléfono: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(String.removeOptional(from: athlete.phone))\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(String.removeOptional(from: athlete.phone))\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Fecha de Nacimiento: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.dateBirth)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.dateBirth)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Datos de Entrenamiento\n", attributes: titleAttributes))
         attributedStringPD.append(NSAttributedString(string: "\nCondición Física: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.physicCondition)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.physicCondition)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Objetivos buscados: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.trainingGoal)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.trainingGoal)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Sitio de Entrenamiento: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.location)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.location)\n\n", attributes: normalAttributes))
         attributedStringPD.append(NSAttributedString(string: "Turno: ", attributes: boldAttributes))
-        attributedStringPD.append(NSAttributedString(string: "\(athlete.availableTime)\n\n"))
+        attributedStringPD.append(NSAttributedString(string: "\(athlete.availableTime)\n\n", attributes: normalAttributes))
         personalDataTextView.attributedText = attributedStringPD
         personalDataTextView.isEditable = false
         personalDataTextView.isScrollEnabled = true
     }
-
 }

@@ -59,11 +59,26 @@ class ExerciseDetailViewController: UIViewController {
         backView.layer.cornerRadius = 15
         backView.layer.masksToBounds = true
         
+        exerciseNameLabel.font = UIFont.boldSystemFont(ofSize: 24)
         exerciseNameLabel.text = exercise.name
+        
+        exerciseImageView.contentMode = .scaleAspectFit
         exerciseImageView.loadImage(from: exercise.image)
+        exerciseImageView.layer.cornerRadius = 15
+        exerciseImageView.layer.masksToBounds = true
+        
+        descriptionExerciseTextView.font = UIFont.boldSystemFont(ofSize: 16)
         descriptionExerciseTextView.text = exercise.description
+        descriptionExerciseTextView.isEditable = false
+        descriptionExerciseTextView.layer.cornerRadius = 10
+        
+        muscleLabel.font = UIFont.boldSystemFont(ofSize: 16)
         muscleLabel.text = "Músculo trabajado: \(exercise.muscleGroup.rawValue)"
+        
+        setsLabel.font = UIFont.boldSystemFont(ofSize: 16)
         setsLabel.text = "Series: \(exercise.sets)"
+        
+        repsLabel.font = UIFont.boldSystemFont(ofSize: 16)
         repsLabel.text = "Repeticiones: \(exercise.reps)"
     }
 }

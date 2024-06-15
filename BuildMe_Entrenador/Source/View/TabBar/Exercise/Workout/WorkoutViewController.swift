@@ -8,6 +8,27 @@
 import UIKit
 import JGProgressHUD
 
+/**
+ Este archivo WorkoutViewController.swift contiene una clase WorkoutViewController que controla la vista principal de la aplicación relacionada con las rutinas de entrenamiento. Aquí está una descripción básica de la clase y sus extensiones:
+
+ Propósito: Gestionar la visualización y la interacción con la lista de rutinas de entrenamiento, permitiendo filtrarlas por nombre.
+
+ Propiedades:
+ - viewModel: Instancia de WorkoutViewModel para manejar la lógica de la vista.
+ - hud: Instancia de JGProgressHUD para mostrar indicadores de actividad.
+ 
+ Lifecycle Methods:
+ - viewDidLoad(): Configura la vista inicial y sus subcomponentes.
+ 
+ Métodos Privados:
+ - initialConfigure(): Configura la apariencia inicial de la vista y establece los delegados.
+ 
+ Extensiones:
+ - UITableViewDelegate, UITableViewDataSource: Implementa métodos para manejar la tabla que muestra las rutinas de entrenamiento.
+ - PrincipalTableDelegate, WorkoutFilterDelegate: Implementa métodos para manejar eventos relacionados con la obtención y filtrado de rutinas de entrenamiento.
+ - UISearchBarDelegate, UITextFieldDelegate: Implementa métodos para manejar la interacción con la barra de búsqueda y el teclado.
+ */
+
 class WorkoutViewController: UIViewController {
 
     // MARK: - IBOutlets

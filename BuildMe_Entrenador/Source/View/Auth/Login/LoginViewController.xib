@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BuildMe_Entrenador" customModuleProvider="target">
             <connections>
-                <outlet property="passwordTextFild" destination="pB6-ha-Sdf" id="oaB-wI-I6l"/>
-                <outlet property="signUpButton" destination="bdJ-w3-gP5" id="m80-KZ-fWv"/>
+                <outlet property="passwordTextField" destination="pB6-ha-Sdf" id="BfM-QX-5Pf"/>
+                <outlet property="signUpButton" destination="zhy-Kl-sMD" id="bEO-FJ-CdG"/>
                 <outlet property="usernameTextField" destination="TDw-6u-jbV" id="0zh-Bn-T3P"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -60,7 +60,7 @@
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="navigateToCreateAccount:" destination="-1" eventType="touchUpInside" id="7oq-Rg-j1H"/>
+                                <action selector="navigateToCreateAccount:" destination="-1" eventType="touchUpInside" id="M5w-Hs-g9s"/>
                             </connections>
                         </button>
                     </subviews>
@@ -75,7 +75,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Olvidé mi contraseña"/>
                     <connections>
-                        <action selector="navigateToForgotPassword:" destination="-1" eventType="touchUpInside" id="a7Q-dG-zf4"/>
+                        <action selector="navigateToForgotPassword:" destination="-1" eventType="touchUpInside" id="NpG-M8-sfC"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-w3-gP5">
@@ -88,7 +88,7 @@
                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="loginWithEmailAndPassword:" destination="-1" eventType="touchUpInside" id="DCw-fs-SN5"/>
+                        <action selector="loginWithEmailAndPassword:" destination="-1" eventType="touchUpInside" id="S6A-AY-9Jy"/>
                     </connections>
                 </button>
             </subviews>
@@ -120,7 +120,7 @@
     <resources>
         <image name="TransparentLogo" width="341.33334350585938" height="341.33334350585938"/>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

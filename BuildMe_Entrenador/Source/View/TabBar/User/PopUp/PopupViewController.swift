@@ -7,6 +7,27 @@
 
 import UIKit
 
+/**
+ Este archivo PopupViewController.swift contiene una clase PopupViewController que se utiliza para mostrar una ventana emergente con detalles sobre una tarea completada. Aquí hay un resumen de su estructura y funcionalidad:
+ Propósito: Mostrar una ventana emergente con detalles sobre una tarea completada, incluyendo observaciones y fecha.
+ Propiedades:
+    - textView: UITextView para mostrar las observaciones de la tarea.
+    - datePicker: UIDatePicker para mostrar la fecha de la tarea.
+    - placeholderText: Texto de marcador de posición para el UITextView.
+    - completedTask: La tarea completada que se mostrará en la ventana emergente.
+ Inicializadores:
+    - init(completedTask:): Inicializa la clase con una tarea completada.
+ Lifecycle Methods:
+    - viewDidLoad(): Configura las vistas y establece los datos iniciales.
+ Métodos Privados:
+    - setupViews(): Configura las vistas de la ventana emergente, incluyendo etiquetas, campos de texto y botones.
+    - configureTextView(): Configura el UITextView para manejar el texto de marcador de posición.
+    - populateData(): Rellena los campos de texto con los datos de la tarea completada.
+ Acciones:
+    - cancelButtonTapped(): Método llamado al tocar el botón "Cerrar" para cerrar la ventana emergente.
+ Extensiones:
+    - extension PopupViewController: UITextViewDelegate: Implementa métodos del UITextViewDelegate para manejar los eventos de edición del UITextView.*/
+
 class PopupViewController: UIViewController {
     
     // MARK: - Properties

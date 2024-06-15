@@ -8,12 +8,13 @@
 import UIKit
 import JGProgressHUD
 
+
 class LoginViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var usernameTextField: CustomTextField!
-    @IBOutlet weak var passwordTextFild: CustomTextField!
+    @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Variables
     let hud = JGProgressHUD()
@@ -24,14 +25,12 @@ class LoginViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         initialConfigure()
     }
     
     // MARK: - Functions
     private func initialConfigure() {
         view.applyBlueRedGradient()
-        
         imageIcon.image = UIImage(named: "closeEye")
         let contentView = UIView()
         contentView.addSubview(imageIcon)
@@ -47,22 +46,21 @@ class LoginViewController: UIViewController {
             width: UIImage(named: "closeEye")!.size.width,
             height: UIImage(named: "closeEye")!.size.height
         )
-        passwordTextFild.rightView = contentView
-        passwordTextFild.rightViewMode = .always
+        passwordTextField.rightView = contentView
+        passwordTextField.rightViewMode = .always
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        imageIcon.isUserInteractionEnabled = true
-        imageIcon.addGestureRecognizer(tapGestureRecognizer)
-        
-        usernameTextField.delegate = self
-        passwordTextFild.delegate = self
-        viewmodel.delegate = self
+                imageIcon.isUserInteractionEnabled = true
+                imageIcon.addGestureRecognizer(tapGestureRecognizer)
+                
+                usernameTextField.delegate = self
+                passwordTextField.delegate = self
+                viewmodel.delegate = self
     }
-    
+
     // MARK: - Actions
     @IBAction func loginWithEmailAndPassword(_ sender: UIButton) {
-        print("Username: \(usernameTextField.text), Password: \(passwordTextFild.text)")
-        viewmodel.login(email: usernameTextField.text, password: passwordTextFild.text)
+        viewmodel.login(email: usernameTextField.text, password: passwordTextField.text)
     }
     @IBAction func navigateToCreateAccount(_ sender: UIButton) {
         viewmodel.navigatoToSignUp()
@@ -73,11 +71,11 @@ class LoginViewController: UIViewController {
         if iconClick {
             iconClick = false
             tappedImage.image = UIImage(named: "openEye")
-            passwordTextFild.isSecureTextEntry = false
+            passwordTextField.isSecureTextEntry = false
         } else {
             iconClick = true
             tappedImage.image = UIImage(named: "closeEye")
-            passwordTextFild.isSecureTextEntry = true
+            passwordTextField.isSecureTextEntry = true
         }
     }
     @IBAction func navigateToForgotPassword(_ sender: UIButton) {
@@ -86,14 +84,13 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Extension UITextFieldDelegate
+
 extension LoginViewController: UITextFieldDelegate {
-    // Este método se llama cuando se toca el botón de retorno en el teclado
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Oculta el teclado
         textField.resignFirstResponder()
         return true
     }
-    // Este método se llama cuando se toca fuera de los text fields
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Oculta el teclado
         view.endEditing(true)
@@ -101,12 +98,14 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 // MARK: - Extension LoginViewControllerDelegate
+
 extension LoginViewController: LoginAuthControllerDelegate {
+    
+    // MARK: LoginAuthControllerDelegate
     func navigateToForgotPassword() {
         let vc = ForgotPasswordViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
     func showIndicator() {
         DispatchQueue.main.async {
             self.hud.textLabel.text = "Iniciando Sesión"
@@ -114,27 +113,22 @@ extension LoginViewController: LoginAuthControllerDelegate {
             self.hud.show(in: self.view)
         }
     }
-    
     func hideIndicator() {
         DispatchQueue.main.async {
             self.hud.dismiss(animated: true)
         }
     }
-    
     func authComplete() {
         dismiss(animated: true)
     }
-    
     func navigate() {
         let signUp = SignupViewController()
         navigationController?.pushViewController(signUp, animated: true)
     }
-    
     func showAlert(title: String, message: String, isError: Bool) {
         DispatchQueue.main.async {
             let hud = JGProgressHUD()
-            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() :
-            JGProgressHUDSuccessIndicatorView()
+            hud.indicatorView = isError ? JGProgressHUDErrorIndicatorView() : JGProgressHUDSuccessIndicatorView()
             hud.textLabel.text = title
             hud.detailTextLabel.text = message
             hud.interactionType = .blockAllTouches
@@ -143,4 +137,3 @@ extension LoginViewController: LoginAuthControllerDelegate {
         }
     }
 }
-

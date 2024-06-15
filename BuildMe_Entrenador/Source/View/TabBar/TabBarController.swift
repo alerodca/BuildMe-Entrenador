@@ -15,49 +15,58 @@ protocol ControllerDelegate: AnyObject {
 }
 
 class TabBarController: UITabBarController {
+    
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupTabs()
-        
-        getAndShowCurrentUserInfo()
+        checkAuthenticationAndLoadUserInfo()
+    }
+    
+    private func checkAuthenticationAndLoadUserInfo() {
+        if let currentUser = Auth.auth().currentUser {
+            self.user = currentUser
+            self.getAndShowCurrentUserInfo()
+        } else {
+            DispatchQueue.main.async {
+                let controller = LoginViewController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
+            }
+        }
     }
     
     private func getAndShowCurrentUserInfo() {
-        guard let user = Auth.auth().currentUser else {
-          // User is not logged in, handle appropriately (e.g., present login screen)
-          self.presentLoginScreen()
-          return
-        }
-
+        guard let user = self.user else { return }
+        
         let databaseRef = Database.database().reference().child("Users").child("Trainer").child(user.uid) // Assuming "Trainer" is a child node
-
+        
         databaseRef.observeSingleEvent(of: .value) { [weak self] snapshot, _ in
-          guard let self = self else { return }
-
-          if !snapshot.exists() {
-            print("User data not found")
-            // Handle user data not found (e.g., log error)
-            return
-          }
-
-          guard let userData = snapshot.value as? [String: Any] else {
-            print("Invalid user data format")
-            // Handle invalid data format (e.g., log error)
-            return
-          }
-
-          guard let name = userData["name"] as? String else {
-            print("Missing name or profileImageURL field in user data")
-            // Handle missing fields (e.g., show default message)
-            return
-          }
-
-          // Update the UI with the retrieved name and profileImageURL (e.g., display in a label or image view)
-          // You can use this information for further UI updates as needed
+            guard let self = self else { return }
+            
+            if !snapshot.exists() {
+                print("User data not found")
+                // Handle user data not found (e.g., log error)
+                return
+            }
+            
+            guard let userData = snapshot.value as? [String: Any] else {
+                print("Invalid user data format")
+                // Handle invalid data format (e.g., log error)
+                return
+            }
+            
+            guard let name = userData["name"] as? String else {
+                print("Missing name or profileImageURL field in user data")
+                // Handle missing fields (e.g., show default message)
+                return
+            }
+            
             self.showAlert(title: "Bienvenido \(name) ", message: "¡Que gusto volver a verte!")
         }
-      }
+    }
     
     private func setupTabs() {
         let users = self.createNav(with: "Usuarios", and: UIImage(systemName: "person.3.sequence.fill"), vc: UsersViewController())
@@ -90,18 +99,18 @@ extension TabBarController: ControllerDelegate {
     }
     
     func showAlert(title: String, message: String) {
-      DispatchQueue.main.async {
-        let hud = JGProgressHUD()
-        
-        // Reduce image size before setting it to the indicatorView
-        let image = UIImage(named: "TransparentLogo")!.scaled(to: CGSize(width: 150.0, height: 150.0))
-        hud.indicatorView = JGProgressHUDImageIndicatorView(image: image)
-        
-        hud.textLabel.text = title
-        hud.detailTextLabel.text = message
-        hud.interactionType = .blockAllTouches
-        hud.show(in: self.view)
-        hud.dismiss(afterDelay: 6, animated: true)
-      }
+        DispatchQueue.main.async {
+            let hud = JGProgressHUD()
+            
+            // Reduce image size before setting it to the indicatorView
+            let image = UIImage(named: "TransparentLogo")!.scaled(to: CGSize(width: 150.0, height: 150.0))
+            hud.indicatorView = JGProgressHUDImageIndicatorView(image: image)
+            
+            hud.textLabel.text = title
+            hud.detailTextLabel.text = message
+            hud.interactionType = .blockAllTouches
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 6, animated: true)
+        }
     }
 }

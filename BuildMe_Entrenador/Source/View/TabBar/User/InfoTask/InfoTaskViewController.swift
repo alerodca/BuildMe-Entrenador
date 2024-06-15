@@ -7,6 +7,31 @@
 
 import UIKit
 
+/**
+ La clase InfoTaskViewController que es un controlador de vista en una aplicación iOS. Aquí está un resumen de su estructura y funcionalidades:
+
+ Propósito: Gestiona la visualización de tareas completadas por un usuario.
+ Herencia: Hereda de UIViewController.
+ IBOutlets:
+    - backView: Vista de fondo en la interfaz de usuario.
+    - tableView: UITableView para mostrar las tareas completadas.
+ Variables:
+    - viewModel: Una instancia de InfoTaskViewModel para manejar la lógica de la vista.
+    - uid: El identificador único del usuario del que se están mostrando las tareas completadas.
+    - emptyTasksLabel: Una etiqueta que se muestra cuando no hay tareas completadas para mostrar.
+ Lifecycle:
+    - viewDidLoad(): Configura la vista cuando se carga por primera vez, inicializando el viewModel y configurando la interfaz de usuario.
+ Inicializadores:
+    - init(uid:): Inicializa la clase con un identificador único de usuario.
+ Funciones privadas:
+    - initialConfigure(): Configura la apariencia inicial de la vista, incluyendo el fondo, la tabla y la etiqueta de tareas vacías.
+    -  configureViewModel(): Configura el viewModel y maneja el reloadDataHandler para actualizar la tabla cuando cambian los datos.
+ Actions & Selectors:
+    - dismissSelf(): Método llamado al tocar el botón de retroceso para cerrar la vista.
+ Extensiones:
+    - extension InfoTaskViewController: UITableViewDataSource, UITableViewDelegate: Implementa los métodos necesarios para la tabla, como el número de filas, la               configuración de las celdas y el manejo de la selección de celdas.
+ */
+
 class InfoTaskViewController: UIViewController {
     
     @IBOutlet var backView: UIView!

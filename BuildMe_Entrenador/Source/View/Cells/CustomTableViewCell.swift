@@ -7,9 +7,14 @@
 
 import UIKit
 
+// Definición de la clase para una celda personalizada
 class CustomTableViewCell: UITableViewCell {
-
-    // Creación de los componentes UI
+    
+    // MARK: - Propiedades
+    
+    // Componentes de la interfaz de usuario
+    
+    /// La vista de imagen personalizada.
     let customImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +23,7 @@ class CustomTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    /// La etiqueta del título.
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +32,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
+    /// La etiqueta del subtítulo.
     let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +41,7 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
+    /// El stack view que contiene las etiquetas de título y subtítulo.
     let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,11 +52,15 @@ class CustomTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    // MARK: - Métodos
+    
+    /// Inicialización de la celda.
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
     }
     
+    /// Inicialización requerida cuando se carga desde un archivo de storyboard o una interfaz de usuario xib.
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
@@ -56,13 +68,15 @@ class CustomTableViewCell: UITableViewCell {
     
     // Configuración de la vista
     private func setupViews() {
+        // Agregar componentes a la vista de contenido de la celda
         contentView.addSubview(customImageView)
         contentView.addSubview(stackView)
         
+        // Agregar etiquetas de título y subtítulo al stack view
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(subtitleLabel)
         
-        // Configuración de las restricciones para customImageView
+        // Configuración de las restricciones para la vista de imagen personalizada
         NSLayoutConstraint.activate([
             customImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             customImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
@@ -71,7 +85,7 @@ class CustomTableViewCell: UITableViewCell {
             customImageView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
-        // Configuración de las restricciones para stackView
+        // Configuración de las restricciones para el stack view
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: customImageView.trailingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
