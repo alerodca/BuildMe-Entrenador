@@ -27,6 +27,10 @@
 		9F23467B2BF536CC005FAB13 /* DietDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23467A2BF536CC005FAB13 /* DietDay.swift */; };
 		9F23467D2BF5375D005FAB13 /* Diet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23467C2BF5375D005FAB13 /* Diet.swift */; };
 		9F472E512BE01BC000DA8BA1 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9F472E502BE01BC000DA8BA1 /* JGProgressHUD */; };
+		9F50ED2D2C1F12B10050509E /* SecondRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50ED2C2C1F12B10050509E /* SecondRoutine.swift */; };
+		9F50ED2F2C1F2F4F0050509E /* ThirdRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50ED2E2C1F2F4F0050509E /* ThirdRoutine.swift */; };
+		9F50ED312C1F36780050509E /* KetoDiet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50ED302C1F36780050509E /* KetoDiet.swift */; };
+		9F50ED332C2006290050509E /* VeganDiet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50ED322C2006290050509E /* VeganDiet.swift */; };
 		9F54980B2BFCB8E300CC8F96 /* ExerciseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5498092BFCB8E300CC8F96 /* ExerciseDetailViewController.swift */; };
 		9F54980C2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */; };
 		9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */; };
@@ -136,6 +140,10 @@
 		9F2346782BF535FC005FAB13 /* NutritionalValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionalValues.swift; sourceTree = "<group>"; };
 		9F23467A2BF536CC005FAB13 /* DietDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDay.swift; sourceTree = "<group>"; };
 		9F23467C2BF5375D005FAB13 /* Diet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diet.swift; sourceTree = "<group>"; };
+		9F50ED2C2C1F12B10050509E /* SecondRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRoutine.swift; sourceTree = "<group>"; };
+		9F50ED2E2C1F2F4F0050509E /* ThirdRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRoutine.swift; sourceTree = "<group>"; };
+		9F50ED302C1F36780050509E /* KetoDiet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KetoDiet.swift; sourceTree = "<group>"; };
+		9F50ED322C2006290050509E /* VeganDiet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeganDiet.swift; sourceTree = "<group>"; };
 		9F5498092BFCB8E300CC8F96 /* ExerciseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewController.swift; sourceTree = "<group>"; };
 		9F54980A2BFCB8E300CC8F96 /* ExerciseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseDetailViewController.xib; sourceTree = "<group>"; };
 		9F54980D2BFCB8F600CC8F96 /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +250,10 @@
 			children = (
 				9F00F5A12BF5DAA400A2CE23 /* StregthRoutine.swift */,
 				9F02647C2BF5FA7200B39F9F /* MediterranianDiet.swift */,
+				9F50ED2C2C1F12B10050509E /* SecondRoutine.swift */,
+				9F50ED2E2C1F2F4F0050509E /* ThirdRoutine.swift */,
+				9F50ED302C1F36780050509E /* KetoDiet.swift */,
+				9F50ED322C2006290050509E /* VeganDiet.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -790,7 +802,9 @@
 				9F90BDEB2BE00048005AABF4 /* ProfileViewController.swift in Sources */,
 				9F90BDB92BDFFD4E005AABF4 /* LoginViewModel.swift in Sources */,
 				9FE89D3D2BEC105F00704A4E /* ForgotPasswordViewModel.swift in Sources */,
+				9F50ED332C2006290050509E /* VeganDiet.swift in Sources */,
 				9FB5BA522C0DCB2D0004808B /* InfoTaskViewModel.swift in Sources */,
+				9F50ED2F2C1F2F4F0050509E /* ThirdRoutine.swift in Sources */,
 				9F90BDD72BE00007005AABF4 /* LoginViewController.swift in Sources */,
 				9F23467B2BF536CC005FAB13 /* DietDay.swift in Sources */,
 				9F00F5A22BF5DAA400A2CE23 /* StregthRoutine.swift in Sources */,
@@ -803,6 +817,7 @@
 				9F160AB02BF524CC00DC4C06 /* WorkoutViewController.swift in Sources */,
 				9F0F08612BF3D8B500CDF0C0 /* Extension+NSMutableParagraphStyle.swift in Sources */,
 				9F90BD642BDFEFCB005AABF4 /* SceneDelegate.swift in Sources */,
+				9F50ED2D2C1F12B10050509E /* SecondRoutine.swift in Sources */,
 				9F90BDDB2BE00013005AABF4 /* SignupViewController.swift in Sources */,
 				9F23466E2BF52D04005FAB13 /* Enums.swift in Sources */,
 				9F2346752BF52F80005FAB13 /* Training.swift in Sources */,
@@ -817,6 +832,7 @@
 				9F2346732BF52DBE005FAB13 /* ExerciseDay.swift in Sources */,
 				9F54980F2BFCB8F700CC8F96 /* FoodDetailViewController.swift in Sources */,
 				9FB5BA492C0DC8670004808B /* CustomTableViewCell.swift in Sources */,
+				9F50ED312C1F36780050509E /* KetoDiet.swift in Sources */,
 				9F90BDCB2BDFFEFE005AABF4 /* Extension+UIView.swift in Sources */,
 				9F8B4BC22BF279C2003A8269 /* Athlete.swift in Sources */,
 				9FB5BA552C0DD3A40004808B /* PopupViewController.swift in Sources */,

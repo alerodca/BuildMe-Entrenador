@@ -18,5 +18,9 @@ class Constants {
     static let dietChild = "Diet"
     static let routineChild = "Routines"
     static let strengthRoutine = "StrengthRoutine"
+    static let muscleDividerRoutine = "muscleDividerRoutine"
+    static let fullBodyRoutine = "fullBodyRoutine"
     static let mediterranianDietChild = "DietMediterranian"
+    static let ketoDietChild = "ketoDietChild"
+    static let veganDietChild = "veganDietChild"
 }

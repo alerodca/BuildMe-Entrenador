@@ -28,6 +28,8 @@ enum MuscleGroup: String, Decodable {
     case neck = "Cuello"
     case lowerBack = "Espalda baja"
     case upperBack = "Espalda alta"
+    case core = "Core"
+    case cardio = "Cardio"
 }
 
 enum Day: String, Decodable, CaseIterable {

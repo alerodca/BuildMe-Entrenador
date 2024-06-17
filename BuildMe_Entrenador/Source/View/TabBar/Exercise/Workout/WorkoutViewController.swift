@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import FirebaseDatabase
 
 /**
  Este archivo WorkoutViewController.swift contiene una clase WorkoutViewController que controla la vista principal de la aplicación relacionada con las rutinas de entrenamiento. Aquí está una descripción básica de la clase y sus extensiones:
@@ -44,7 +45,7 @@ class WorkoutViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //uploadTrainingToFirebase(training: ThirdRoutine.thirdRoutine)
         initialConfigure()
     }
     
@@ -53,6 +54,27 @@ class WorkoutViewController: UIViewController {
     // MARK: - Functions
     
     // MARK: - Private Functions
+    
+    private func uploadTrainingToFirebase(training: Training) {
+    // Referencia a la base de datos de Firebase
+    let ref = Database.database().reference()
+    
+    // Convertir el objeto Training a un diccionario
+    let trainingData = training.toDictionary()
+    
+    // Generar una nueva clave única para el objeto Training
+    let newTrainingRef = ref.child(Constants.routineChild).child(Constants.fullBodyRoutine)
+    
+    // Subir el objeto Training al nodo "trainings" en Firebase Database
+    newTrainingRef.setValue(trainingData) { error, _ in
+        if let error = error {
+            print("Error al subir el objeto Training a Firebase Database: \(error.localizedDescription)")
+        } else {
+            print("Objeto Training subido exitosamente a Firebase Database")
+        }
+    }
+   }
+    
     private func initialConfigure() {
         noResultsLabel.isHidden = true
         

@@ -24,6 +24,7 @@ class DietViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //uploadDietToFirebase(diet: VeganDiet.diet)
         initialConfigure()
     }
     
@@ -32,6 +33,26 @@ class DietViewController: UIViewController {
     // MARK: - Functions
     
     // MARK: - Private Functions
+    private func uploadDietToFirebase(diet: Diet) {
+    // Referencia a la base de datos de Firebase
+    let ref = Database.database().reference()
+    
+    // Convertir el objeto Training a un diccionario
+    let dietData = diet.toDictionary()
+    
+    // Generar una nueva clave única para el objeto Training
+    let newTrainingRef = ref.child(Constants.dietChild).child(Constants.veganDietChild)
+    
+    // Subir el objeto Training al nodo "trainings" en Firebase Database
+    newTrainingRef.setValue(dietData) { error, _ in
+        if let error = error {
+            print("Error al subir el objeto Dieta a Firebase Database: \(error.localizedDescription)")
+        } else {
+            print("Objeto Dieta subido exitosamente a Firebase Database")
+        }
+    }
+   }
+    
     private func initialConfigure() {
         noResultsLabel.isHidden = true
         
